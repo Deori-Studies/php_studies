@@ -1,0 +1,16 @@
+code {
+  background-color: black;
+  color: rgb(0, 153, 255);
+}
+
+table {
+  border: 1px solid black;
+}
+
+th {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+}
