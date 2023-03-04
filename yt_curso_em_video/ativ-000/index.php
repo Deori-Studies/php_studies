@@ -82,7 +82,7 @@
       <td><code class="language-php">&lt;? ?&gt;</code></td>
       <td>Short tag</td>
       <td>Normalmente desabilitado - Funciona</td>
-      <td>em php.ini|short_open_tag=On &lt; v5.4.0 &lt; em .htaccess|php_value short_open_tag 1 &lt; v8.0.0 </td>
+      <td>em php.ini|short_open_tag=On &lt; v5.4.0 &lt; em .htaccess|php_value short_open_tag 1</td>
     </tr>
       <td><code class="language-php">&lt;% %&gt;</code></td>
       <td>ASP tag</td>
