@@ -55,6 +55,7 @@
   <p>
     Em resumo, as aspas simples são úteis quando você tem uma string literal e não precisa de nenhuma interpretação ou substituição de variáveis. As aspas duplas são úteis quando você precisa incluir variáveis em uma string. Já o acento grave é útil quando você precisa incluir variáveis e expressões PHP em uma string.
   </p>
+  <h2>Tags</h2>
   <p>
     PHP já teve duas formas:
   </p>
@@ -71,7 +72,7 @@
     </tr>
     <tr>
       <td><code class="language-php">&lt;?= ?&gt;</code></td>
-      <td>Short tag ?</td>
+      <td>Short tag =</td>
       <td>Existe habilitada - ?</td>
     </tr>
     <tr>
@@ -90,6 +91,14 @@
     </tr>
     <tr>
   </table>
+  <h2>PHP Online - SANDBOX pra brincar</h2>
+  <p>
+    Conheça a opção online para testar código php.<br>
+    Inclusive é possível visualizar o html "renderizado".<br>
+    Primeiro selecione a versão do PHP que você quer usar em <span class="c-bolder">PHP versions and Options</span>, logo abaixo da área para escrever o código.<br>
+    Depois selecione em <span class="c-bolder">Other Options</span> em <span class="c-bolder">Output</span>, o radio button <span class="c-bolder">HTML</span>.
+    <a href="https://onlinephp.io/">https://onlinephp.io/</a>
+  </p>
   <script src="../../src/dark_theme/prism.js"></script>
 </body>
 </html>
