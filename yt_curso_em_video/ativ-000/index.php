@@ -64,32 +64,37 @@
       <th>tags</th>
       <th>nome</th>
       <th>uso</th>
+      <th>Última versão</th>
     </tr>
     <tr>
       <td><code class="language-php">&lt;?php ?&gt;</code></td>
       <td>Super tag</td>
       <td>Padrão atual</td>
+      <td>2.0 ou superior</td>
     </tr>
     <tr>
-      <td><code class="language-php">&lt;?= ?&gt;</code></td>
-      <td>Short tag =</td>
-      <td>Existe habilitada - ?</td>
+      <td><code class="language-php">&lt;?= "Echo" ?&gt;</code></td>
+      <td>Short open tag</td>
+      <td>Comando echo resumido</td>
+      <td>5.4.0 ou superior</td>
     </tr>
     <tr>
       <td><code class="language-php">&lt;? ?&gt;</code></td>
       <td>Short tag</td>
       <td>Normalmente desabilitado - Funciona</td>
+      <td>em php.ini|short_open_tag=On &lt; v5.4.0 &lt; em .htaccess|php_value short_open_tag 1 &lt; v8.0.0 </td>
     </tr>
       <td><code class="language-php">&lt;% %&gt;</code></td>
       <td>ASP tag</td>
       <td>Legado - Não funciona</td>
+      <td>Versão anterior a 7.0.0 do PHP ("asp_tags = On" ativada)</td>
     </tr>
     <tr>
-      <td><code class="language-php">&lt;script language="php"&gt;&lt;/script&gt;'</code></td>
-      <td>?</td>
+      <td><code class="language-php">&lt;script language="php"&gt;&lt;/script&gt;</code></td>
+      <td>Script tag</td>
       <td>Legado - Não funciona</td>
+      <td>Versão anterior a 7.0.0 do PHP</td>
     </tr>
-    <tr>
   </table>
   <h2>PHP Online - SANDBOX pra brincar</h2>
   <p>
