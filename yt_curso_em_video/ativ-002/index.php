@@ -56,6 +56,78 @@
       echo "Timezone: " . date("T") . "<br>";
     ?>
   </p>
+  <h2>Interpolação e primeiras variáveis</h2>
+  <p>
+    Primeiramente, assim se inicia uma variável:<br>
+    <code class="language-php">$name = algo;</code><br>
+    PHP assim como js aceita interpolar variáveis, no js seria usando `${variável}`. <br>
+    Em nosso querido PHP não é muito diferente.<br>
+    Atenção: Lembre-se que é necessário usar "aspas duplas", `graves` está deprecated com variáveis e 'aspas simples' é interpretado apenas como string<br>
+    Observe: <br>
+  </p>
+  <pre>
+    <code class="language-php">
+    $myage = date("Y") - 1995;
+
+    echo "A idade do Deori é $myage.&lt;br&gt;";
+    echo `A idade do Deori é ${myage}.&lt;br&gt;`;
+    echo 'A idade do Deori é $myage.&lt;br&gt;';
+    </code>
+  </pre>
+  <p>Resultado: </p>
+  <?php
+    $myage = date("Y") - 1995;
+
+    echo "A idade do Deori é $myage.<br>";
+    echo `A idade do Deori é ${myage}.<br>`;
+    echo 'A idade do Deori é $myage.<br>';
+  ?>
+  <h2>Curiosidades sobre o PHP</h2>
+  <p>Observe o código abaixo:</p>
+  <pre>
+    <code class="language-php">
+      $xablau = "xablauzin";
+      $$xablau = "Opa beleza?";
+
+      echo "$xablauzin";
+    </code>
+  </pre>
+  <p>Veja o resultado:<br></p>
+  <?php
+    $xablau = "xablauzin";
+    $$xablau = "Opa beleza?";
+
+    echo "$xablauzin";
+  ?>
+  <p>
+    Parte 1:
+    <br>
+    ?????O que aconteceu???????????<br>
+    Pois bem, é possível dar o nome de uma variável utilizando o valor de outra variável.<br>
+    Vou explicar como se eu fosse o interpretador pensando<br>
+    de forma simplificada, claro, pra saber como ele funciona consulte a documentação do interpretador<br>
+    <br>
+    $ (Vou ler ou criar uma variável??)<br>
+    $variavel1 (Vou ler ou criar uma variável com esse nome??)<br>
+    $variavel1 = (Vou criar uma variável com esse nome!!)(Mas com que valor?)<br>
+    $variavel1 = "xablau"; (Criar uma variável "nome" com valor tipo string "xablau")<br>
+    <br>
+      Parte 2:
+    <br>
+    $ (Vou ler ou criar uma variável?)<br>
+    $$ (Vou ler ou criar uma variável?)(Vou ler ou criar uma variável?)<br>
+    $$variavel1 (Vou ler ou criar uma variável?)(Vou ler ou criar uma variável com esse nome?)<br>
+    $$variavel1 = (VOU CRIAR uma variável com o nome da variável a frente)(VOU LER uma variável com esse nome!!);<br>
+    $$variavel1 = "Olá mundo";(Criar uma variável com valor de "Olá mundo" com o nome lido na posição $nome)<br>
+    <br>
+    variável $xablau criada com valor de "Olá mundo"; <br>
+    <br>
+    Não foi a melhor explicação mas também não foi a pior, ou foi?
+  </p>
+  <h2>Outra coisa</h2>
+  <p>
+    Olha nas devtools do navegador como o PHP envia apenas html para o cliente não expondo o código da sua aplicação.
+  </p>
   <script src="../../src/dark_theme/prism.js"></script>
 </body>
 </html>
