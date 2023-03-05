@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../src/dark_theme/prism.css">
   <link rel="stylesheet" href="../../src/dark_theme/style.css">
-  <title>Document</title>
+  <title>Variáveis, date e concatenação</title>
 </head>
 <body>
   <h1>Exemplo PHP</h1>
