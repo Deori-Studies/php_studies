@@ -79,6 +79,6 @@
       ?>
       </section>
     </main>
-    <script src="../../src/dark_theme/prism.js"></script>
+    <script src="../../src/util/prism/prism.js"></script>
   </body>
 </html>

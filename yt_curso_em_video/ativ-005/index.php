@@ -126,6 +126,6 @@
     <li>callable</li>
     <li>mixed</li>
   </ul>
-  <script src="../../src/dark_theme/prism.js"></script>
+  <script src="../../src/util/prism/prism.js"></script>
 </body>
 </html>
