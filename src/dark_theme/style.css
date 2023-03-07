@@ -1,6 +1,5 @@
 pre {
-  border: 1px solid black;
-  background-color: #333;
+  border: 0.1rem solid black;
   height: fit-content;
   padding: 1rem;
   width: fit-content;
@@ -8,22 +7,19 @@ pre {
 }
 
 code {
-  background-color: #333;
-  color: rgb(0, 153, 255);
+  width: 100%;
 }
 
-table {
-  border: 1px solid black;
-}
-
-th {
-  border: 1px solid black;
-}
-
-td {
-  border: 1px solid black;
+div.code-toolbar {
+  width: fit-content;
+  max-width: 100%;
 }
 
 .c-bolder {
   font-weight: bolder;  
+}
+
+.overflow-scroll {
+  max-width: 100%;
+  overflow: scroll;
 }
