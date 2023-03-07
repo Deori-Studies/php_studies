@@ -123,7 +123,7 @@
   <ul>
     <li>null</li>
     <li>resource</li>
-    <li>callabe</li>
+    <li>callable</li>
     <li>mixed</li>
   </ul>
   <script src="../../src/dark_theme/prism.js"></script>
