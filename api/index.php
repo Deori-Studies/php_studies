@@ -13,6 +13,13 @@
   <title>Hello World em PHP</title>
 </head>
 
+<?php
+  require "./src/style/reset.php";
+  require "./src/style/base.php";
+  require "./src/style/style.php";
+  require "./src/style/responsive.php";
+?>
+
 <body>
   <header>
     <h1>Hello World em PHP</h1>
