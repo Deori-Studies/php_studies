@@ -67,18 +67,21 @@
           </code>
       </pre>
       <p>Resultado:</p>
-      <?php
-        $result = "2" + "2";
-        echo "Usando + <br>";
-        var_dump($result);
-        echo "<br>";
-        $result = "4.1" + "2.3";
-        var_dump($result);
-        echo "<br><br>";
-        echo "Usando .<br>";
-        $result = "2" . "2";
-        var_dump($result);
-      ?>
+
+      <p class="code-result">
+        <?php
+          $result = "2" + "2";
+          echo "Usando + <br>";
+          var_dump($result);
+          echo "<br>";
+          $result = "4.1" + "2.3";
+          var_dump($result);
+          echo "<br><br>";
+          echo "Usando .<br>";
+          $result = "2" . "2";
+          var_dump($result);
+        ?>
+      </p>
       </article>
     </main>
     <script src="../../src/util/prism/prism.js"></script>

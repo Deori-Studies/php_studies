@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,14 +12,14 @@
   <link rel="stylesheet" href="../../src/style/responsive.css">
   <title>Formulários com PHP - 1</title>
 </head>
+
 <body>
   <header>
     <h1>Formulários com PHP - Frontend</h1>
   </header>
 
-  <h2>Apresente-se para nós</h2>
-
-  <article>
+  <section>
+    <h2>Apresente-se para nós</h2>
     <form action="cad.php" method="get">
       <label for="nome">Nome</label>
       <input type="text" name="nome" id="idnome">
@@ -26,7 +27,7 @@
       <input type="text" name="sobrenome" id="idsobrenome">
       <input type="submit" value="Enviar">
     </form>
-  </article>
+  </section>
   <article>
     <p>
       Observe a diferença na forma de envio entre GET e POST,
@@ -36,4 +37,5 @@
   </article>
   <script src="../../src/util/prism/prism.js"></script>
 </body>
+
 </html>

@@ -39,23 +39,9 @@
         <p><a href="javascript:history.go(-1)">Voltar a página anterior</a></p>
     </article>
     <article>
-    <?php
-        echo '$_GET: ';
-        var_dump($_GET);
-        echo "<br><br>";
-        echo '$_POST: ';
-        var_dump($_POST);
-        echo "<br><br>";
-        echo '$_COOKIE: ';
-        var_dump($_COOKIE);
-        echo "<br><br>";
-        echo '$_REQUEST: ';
-        var_dump($_REQUEST);
-        echo "<br><br>";
-      ?>
       <p>
         Aqui utilizamos o método GET e recebemos apenas na variável de GET,<br>
-        Recebeos junto com REQUEST pois essa variável engloba todas as outras juntas. <br>
+        Recebemos junto com REQUEST pois essa variável engloba todas as outras juntas. <br>
       </p>
       <pre>
         <code class="language-php">
@@ -65,6 +51,23 @@
           var_dump($_REQUEST);
         </code>
       </pre>
+
+      <p class="code-result">
+        <?php
+          echo '$_GET: ';
+          var_dump($_GET);
+          echo "<br><br>";
+          echo '$_POST: ';
+          var_dump($_POST);
+          echo "<br><br>";
+          echo '$_COOKIE: ';
+          var_dump($_COOKIE);
+          echo "<br><br>";
+          echo '$_REQUEST: ';
+          var_dump($_REQUEST);
+          echo "<br><br>";
+        ?>
+      </p>
     </article>
   </main>
   <script src="../../src/util/prism/prism.js"></script>
