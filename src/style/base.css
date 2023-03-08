@@ -38,8 +38,12 @@ body pre {
 }
 
 body code {
-  background-color: red;
+  background-color: #333;
   max-width: 100%;
+  width: fit-content;
+}
+
+body p, h1, h2, h3, h4, h5, h6 {
   width: fit-content;
 }
 
@@ -47,6 +51,7 @@ body p {
   font-size: 1rem;
   padding: 1rem;
   text-align: justify;
+  padding: 0.5rem;
 }
 
 body h1 {
@@ -79,8 +84,17 @@ body h6 {
   padding: 0;
 }
 
+body span {
+  font-size: 1rem;
+}
+
 body header, main, section, article {
+  align-content: center;
+  align-items: center;
   max-width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem;
 }
 
 body main, section, article {
@@ -88,7 +102,6 @@ body main, section, article {
   border-radius: 0.5rem;
   box-shadow: 0 0 2rem #0009;
   margin-bottom: 0.75rem;
-  padding: 1rem;
 }
 
 body footer {
@@ -129,10 +142,12 @@ body table th {
   color: white;
   padding: 0.5rem;
   text-align: left;
+  font-size: 1rem;
 }
 
 body table td {
   padding: 0.5rem;
+  font-size: 0.8rem;
 }
 
 body table tr {
@@ -144,7 +159,6 @@ body table tr:nth-child(odd) {
 }
 
 body ul, ol {
-  font: inherit;
   list-style: disc;
   list-style-type: disc;
   margin: 1rem;
