@@ -3,6 +3,8 @@
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   box-sizing: border-box;
+  font-size: 62.5%;
+
   --lighter-white: #f8f8f8;
   --light-white: #cecece;
 }
@@ -10,29 +12,41 @@
 /* ELEMENTOS DA INTERFACE */
 
 body {
+  align-items: center;
+  background-attachment: fixed;
   background-color: var(--lighter-white);
   background-image: linear-gradient(180deg, var(--lighter-white), var(--light-white));
-  background-repeat: no-repeat;
   background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: center;
-
   height: fit-content;
   width: auto;
+}
 
-  font-size: 62.5%;
+body pre {
+  border: 0.1rem solid black;
+  height: fit-content;
+  max-width: 100%;
+  overflow: scroll;
+  padding: 1rem;
+  width: fit-content;
+  white-space: pre-line;
+}
+
+body code {
+  background-color: red;
+  max-width: 100%;
+  width: fit-content;
 }
 
 body p {
-  text-align: justify;
   font-size: 1rem;
   padding: 1rem;
+  text-align: justify;
 }
 
 body h1 {
@@ -65,181 +79,184 @@ body h6 {
   padding: 0;
 }
 
-header, main, section, article {
+body header, main, section, article {
   max-width: 100%;
 }
 
-main, section, article {
+body main, section, article {
   background-color: white;
-  padding: 1rem;
-  margin-bottom: 0.75rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 2rem #0009;
+  margin-bottom: 0.75rem;
+  padding: 1rem;
 }
 
-footer {
-  display: block;
-  width: 100%;
+body footer {
   background-color: #291f6c;
   color: white;
-  text-align: center;
+  display: block;
   margin-top: auto;
   padding: 0.5rem;
+  text-align: center;
+  width: 100%;
 }
 
-a {
-  color: #15142b;
+body a {
   background-color: rgba(55, 41, 145, 0.1);
-  padding: 0 0.3rem;
-  font-weight: 600;
-  text-decoration: none;
   border-bottom: 0.05rem dotted #372991;
+  color: #15142b;
+  font-weight: 600;
+  padding: 0 0.3rem;
+  text-decoration: none;
 }
 
-a:hover {
+body a:hover {
   color: #372991;
   border-bottom: 0.1rem solid #372991;
 }
 
 /* TABELAS E LISTAS */
 
-table {
+body table {
   border-spacing: 0;
   border: 0.05rem solid #372991;
   margin: 1rem auto;
   overflow: scroll;
 }
 
-table th {
+body table th {
   background-color: #372991;
   color: white;
   padding: 0.5rem;
   text-align: left;
 }
 
-table td {
+body table td {
   padding: 0.5rem;
 }
 
-table tr {
+body table tr {
   background-color: rgb(230, 230, 255);
 }
 
-table tr:nth-child(odd) {
+body table tr:nth-child(odd) {
   background-color: rgb(180, 180, 230);
 }
 
-ul, ol {
-  list-style: disc !important;
-  list-style-type: disc !important;
-  margin: 1rem !important;
-  padding: 0rem !important;
-  font-size: 100%;
+body ul, ol {
   font: inherit;
-  vertical-align: baseline;
+  list-style: disc;
+  list-style-type: disc;
+  margin: 1rem;
   max-width: 90%;
+  padding: 0rem;
+  vertical-align: baseline;
 }
 
-ul > li::marker {
+body li {
+  font-size: 1rem;
+}
+
+body ul > li::marker {
   color: rebeccapurple;
 }
 
 /* ELEMENTOS DE FORMULÁRIO */
 
-form {
+body form {
   background-color: rgba(55, 41, 145, 0.2);
-  padding: 1.5rem;
   border-radius: 1rem;
+  padding: 1.5rem;
 }
 
-form label {
+body form label {
+  background-color: rgba(55, 41, 145, 0.2);
+  border-radius: 0.5rem;
   display: block;
-  width: fit-content;
   font-size: 0.8rem;
   font-weight: 100;
-  background-color: rgba(55, 41, 145, 0.2);
-  padding: 0.3rem 0.7rem;
-  margin-top: 1rem;
   margin-bottom: 0;
-  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.3rem 0.7rem;
+  width: fit-content;
 }
 
-input[type=text], [type=number], select, input[type=date],
+body input[type=text], [type=number], select, input[type=date],
 input[type=date], input[type=datetime], input[type=email], input[type=month],
 input[type=password], input[type=range], input[type=tel], input[type=time],
 input[type=week] {
-  width: 100%;
-  padding: 1.2rem 2rem;
-  font-size: 1rem;
-  margin: 0.8rem 0;
-  display: inline-block;
   border: 1rem solid #ccc;
   border-radius: 0.4rem;
   box-sizing: border-box;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0.8rem 0;
+  padding: 1.2rem 2rem;
+  width: 100%;
 }
 
-input[type=submit] {
-  width: 100%;
+body input[type=submit] {
   background-color: #4CAF50;
-  font-size: 1rem;
-  color: white;
-  padding: 1rem 2rem;
-  margin: 0.5rem 0;
   border: none;
   border-radius: 0.4rem;
+  color: white;
   cursor: pointer;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  padding: 1rem 2rem;
+  width: 100%;
 }
 
-input[type=submit]:hover {
+body input[type=submit]:hover {
   background-color: #45a049;
 }
 
-input[type=reset] {
-  width: 100%;
+body input[type=reset] {
   background-color: #eb9903;
-  font-size: 1rem;
-  color: white;
-  padding: 1rem 2rem;
-  margin: 0.5rem 0;
   border: none;
   border-radius: 0.4rem;
+  color: white;
   cursor: pointer;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  padding: 1rem 2rem;
+  width: 100%;
 }
 
-input[type=reset]:hover {
+body input[type=reset]:hover {
   background-color: #c27013;
 }
 
-input[type=button], button {
-  width: 100%;
+body input[type=button], button {
   background-color: #372991;
-  font-size: 1rem;
-  color: white;
-  padding: 1rem 2rem;
-  margin: 0.5rem 0;
   border: none;
   border-radius: 0.4rem;
   cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  padding: 1rem 2rem;
+  width: 100%;
 }
 
-input[type=button]:hover, button:hover {
+body input[type=button]:hover, button:hover {
   background-color: #291f6c;
 }
 
-fieldset {
+body fieldset {
   border: 0.05rem dotted #372991;
 }
 
-fieldset > legend {
+body fieldset > legend {
+  background-color: rgba(55, 41, 145, 0.2);
+  border-radius: 0.5rem;
   font-size: 0.8rem;
   font-weight: 100;
-  background-color: rgba(55, 41, 145, 0.2);
   padding: 0.3rem 0.7rem;
-  border-radius: 0.5rem;
 }
 
-input[type=radio] + label, input[type=checkbox] + label {
+body input[type=radio] + label, input[type=checkbox] + label {
+  background-color: rgba(0, 0, 0, 0);
   display: inline-block;
   font-size: 1rem;
-  background-color: rgba(0, 0, 0, 0);
 }
