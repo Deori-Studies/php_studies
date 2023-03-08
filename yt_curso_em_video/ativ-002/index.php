@@ -14,6 +14,10 @@
 <body>
   <header>
     <h1>Exemplo PHP</h1>
+    <nav>
+      <a href="../ativ-001/"><button>Anterior</button></a>
+      <a href="../ativ-003/"><button>Próxima</button></a>
+    </nav>
   </header>
 
   <main>

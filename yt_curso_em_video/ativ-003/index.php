@@ -12,7 +12,13 @@
   <title>php.ini</title>
 </head>
 <body>
-  <h1>Configuração básica do php no php.ini</h1>
+  <header>
+    <h1>Configuração básica do php no php.ini</h1>
+    <nav>
+      <a href="../ativ-002/"><button>Anterior</button></a>
+      <a href="../ativ-004/"><button>Próxima</button></a>
+    </nav>
+  </header>
   <article>
     <h2>Básicos:</h2>
     <p>

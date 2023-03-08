@@ -121,6 +121,17 @@ nav input[type=button], nav button {
   width: fit-content;
 }
 
+nav a {
+  background-color: #0000;
+  border-bottom: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+nav a:hover {
+  border: none;
+}
+
 main {
   align-content: center;
   align-items: center;

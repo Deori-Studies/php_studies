@@ -14,6 +14,9 @@
   <body>
     <header>
       <h1>Operadores Aritméticos</h1>
+      <nav>
+      <a href="../ativ-007/"><button>Anterior</button></a>
+    </nav>
     </header>
     <main>
       <article>

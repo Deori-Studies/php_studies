@@ -18,8 +18,8 @@
   <header>
     <h1>Manipulação de Strings - PHP</h1>
     <nav>
-      <input type="button" value="Próxima">
-      <input type="button" value="Anterior">
+      <a href="../ativ-005/"><button>Anterior</button></a>
+      <a href="../ativ-007/"><button>Próxima</button></a>
     </nav>
   </header>
   <main>
