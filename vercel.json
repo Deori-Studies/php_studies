@@ -10,39 +10,39 @@
       "dest": "/api/index.php"
     },
     {
-      "src": "/api/studies/000/(.*)", 
+      "src": "/api/yt_curso_em_video/ativ-000/index.php",
       "dest": "/api/yt_curso_em_video/ativ-000/index.php"
     },
     {
-      "src": "/api/studies/001/(.*)", 
+      "src": "/api/yt_curso_em_video/ativ-001/index.php",
       "dest": "/api/yt_curso_em_video/ativ-001/index.php"
     },
     {
-      "src": "/api/studies/002/(.*)", 
+      "src": "/api/yt_curso_em_video/ativ-002/index.php",
       "dest": "/api/yt_curso_em_video/ativ-002/index.php"
     },
     {
-      "src": "/api/studies/003/(.*)", 
+      "src": "/api/yt_curso_em_video/ativ-003/index.php",
       "dest": "/api/yt_curso_em_video/ativ-003/index.php"
     },
     {
-      "src": "/api/studies/004/(.*)", 
+      "src": "/api/yt_curso_em_video/ativ-004/index.php",
       "dest": "/api/yt_curso_em_video/ativ-004/index.php"
     },
     {
-      "src": "/api/studies/005/(.*)", 
+      "src": "/api/yt_curso_em_video/ativ-005/index.php",
       "dest": "/api/yt_curso_em_video/ativ-005/index.php"
     },
     {
-      "src": "/api/studies/006/(.*)", 
+      "src": "/api/yt_curso_em_video/ativ-006/index.php",
       "dest": "/api/yt_curso_em_video/ativ-006/index.php"
     },
     {
-      "src": "/api/studies/007/(.*)", 
+      "src": "/api/yt_curso_em_video/ativ-007/index.php",
       "dest": "/api/yt_curso_em_video/ativ-007/index.php"
     },
     {
-      "src": "/api/studies/008/(.*)", 
+      "src": "/api/yt_curso_em_video/ativ-008/index.php",
       "dest": "/api/yt_curso_em_video/ativ-008/index.php"
     }
   ]
