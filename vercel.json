@@ -6,44 +6,44 @@
   },
   "routes": [
     {
-      "src": "/", 
-      "dest": "/api/index.php"
+      "src": "/api/index.php",
+      "dest": "/"
     },
     {
-      "src": "/studies/000", 
-      "dest": "api/yt_curso_em_video/ativ-000/index.php"
+      "src": "api/yt_curso_em_video/ativ-000/index.php",
+      "dest": "/studies/000"
     },
     {
-      "src": "/studies/001", 
-      "dest": "api/yt_curso_em_video/ativ-001/index.php"
+      "src": "api/yt_curso_em_video/ativ-001/index.php",
+      "dest": "/studies/001"
     },
     {
-      "src": "/studies/002", 
-      "dest": "api/yt_curso_em_video/ativ-002/index.php"
+      "src": "api/yt_curso_em_video/ativ-002/index.php",
+      "dest": "/studies/002"
     },
     {
-      "src": "/studies/003", 
-      "dest": "api/yt_curso_em_video/ativ-003/index.php"
+      "src": "api/yt_curso_em_video/ativ-003/index.php",
+      "dest": "/studies/003"
     },
     {
-      "src": "/studies/004", 
-      "dest": "api/yt_curso_em_video/ativ-004/index.php"
+      "src": "api/yt_curso_em_video/ativ-004/index.php",
+      "dest": "/studies/004"
     },
     {
-      "src": "/studies/005", 
-      "dest": "api/yt_curso_em_video/ativ-005/index.php"
+      "src": "api/yt_curso_em_video/ativ-005/index.php",
+      "dest": "/studies/005"
     },
     {
-      "src": "/studies/006", 
-      "dest": "api/yt_curso_em_video/ativ-006/index.php"
+      "src": "api/yt_curso_em_video/ativ-006/index.php",
+      "dest": "/studies/006"
     },
     {
-      "src": "/studies/007", 
-      "dest": "api/yt_curso_em_video/ativ-007/index.php"
+      "src": "api/yt_curso_em_video/ativ-007/index.php",
+      "dest": "/studies/007"
     },
     {
-      "src": "/studies/008", 
-      "dest": "api/yt_curso_em_video/ativ-008/index.php"
+      "src": "api/yt_curso_em_video/ativ-008/index.php",
+      "dest": "/studies/008"
     }
   ]
 }
