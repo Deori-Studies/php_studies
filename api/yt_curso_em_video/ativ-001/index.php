@@ -15,8 +15,8 @@
     <header>
       <h1>Dados do Servidor</h1>
       <nav>
-      <a href="../ativ-000/"><button>Anterior</button></a>
-      <a href="../ativ-002/"><button>Próxima</button></a>
+      <a href="/studies/000/"><button>Anterior</button></a>
+      <a href="/studies/002/"><button>Próxima</button></a>
     </nav>
     </header>
     <?php

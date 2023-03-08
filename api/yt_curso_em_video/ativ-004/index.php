@@ -15,8 +15,8 @@
   <header>
     <h1>Variávels e Constantes em PHP</h1>
     <nav>
-      <a href="../ativ-003/"><button>Anterior</button></a>
-      <a href="../ativ-005/"><button>Próxima</button></a>
+      <a href="/studies/003/"><button>Anterior</button></a>
+      <a href="/studies/005/"><button>Próxima</button></a>
     </nav>
   </header>
 

@@ -15,8 +15,8 @@
   <header>
     <h1>Configuração básica do php no php.ini</h1>
     <nav>
-      <a href="../ativ-002/"><button>Anterior</button></a>
-      <a href="../ativ-004/"><button>Próxima</button></a>
+      <a href="/studies/002/"><button>Anterior</button></a>
+      <a href="/studies/004/"><button>Próxima</button></a>
     </nav>
   </header>
   <article>
