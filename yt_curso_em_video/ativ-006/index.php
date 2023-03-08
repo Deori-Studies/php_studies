@@ -17,6 +17,10 @@
 
   <header>
     <h1>Manipulação de Strings - PHP</h1>
+    <nav>
+      <input type="button" value="Próxima">
+      <input type="button" value="Anterior">
+    </nav>
   </header>
   <main>
     <article>

@@ -107,6 +107,20 @@ header {
   padding: 0.5rem;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav input[type=button], nav button {
+  background-color: rgba(102, 51, 153, 0.508);
+  width: fit-content;
+}
+
 main {
   align-content: center;
   align-items: center;
