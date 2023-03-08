@@ -45,8 +45,8 @@
             echo "Timezone: " . date("T") . "&lt;br&gt;";
           </code>
         </pre>
-      <p>
-        Resultado: <br>
+        <p>Resultado:<p>
+      <p class="code-result">
         <?php
           echo "A data de hoje é " . date("d/M/Y") . "<br>";
           echo "Dia: " . date("d") . "<br>";
@@ -84,13 +84,15 @@
         echo 'A idade do Deori é $myage.&lt;br&gt;';
         </code>
       </pre>
-      <p>Resultado: </p>
-      <?php
-        $myage = date("Y") - 1995;
-        echo "A idade do Deori é $myage.<br>";
-        echo `A idade do Deori é ${myage}.<br>`;
-        echo 'A idade do Deori é $myage.<br>';
-      ?>
+      <p>Resultado:<p>
+      <p class="code-result">
+        <?php
+          $myage = date("Y") - 1995;
+          echo "A idade do Deori é $myage.<br>";
+          echo `A idade do Deori é ${myage}.<br>`;
+          echo 'A idade do Deori é $myage.<br>';
+        ?>
+      </p>
     </article>
 
     <article>
@@ -103,12 +105,14 @@
           echo "$xablauzin";
         </code>
       </pre>
-      <p>Veja o resultado:<br></p>
-      <?php
-        $xablau = "xablauzin";
-        $$xablau = "Opa beleza?";
-        echo "$xablauzin";
-      ?>
+      <p>Resultado:<p>
+      <p class="code-result">
+        <?php
+          $xablau = "xablauzin";
+          $$xablau = "Opa beleza?";
+          echo "$xablauzin";
+        ?>
+      </p>
       <p>
         Parte 1:
         <br>
@@ -135,10 +139,13 @@
         Não foi a melhor explicação mas também não foi a pior, ou foi?
       </p>
     </article>
-    <h2>Outra coisa</h2>
-    <p>
-      Olha nas devtools do navegador como o PHP envia apenas html para o cliente não expondo o código da sua aplicação.
-    </p>
+
+    <article>
+      <h2>Outra coisa</h2>
+      <p>
+        Olha nas devtools do navegador como o PHP envia apenas html para o cliente não expondo o código da sua aplicação.
+      </p>
+    </article>
   </main>
   <script src="../../src/util/prism/prism.js"></script>
 </body>

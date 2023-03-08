@@ -39,12 +39,14 @@
       </code>
     </pre>
     <p>Resultado: </p>
-    <?php
-      $myage = date("Y") - 1995;
-      echo "A idade do Deori é $myage.<br>";
-      echo `A idade do Deori é ${myage}.<br>`;
-      echo 'A idade do Deori é $myage.<br>';
-    ?>
+    <p class="code-result">
+      <?php
+        $myage = date("Y") - 1995;
+        echo "A idade do Deori é $myage.<br>";
+        echo `A idade do Deori é ${myage}.<br>`;
+        echo 'A idade do Deori é $myage.<br>';
+      ?>
+    </p>
   </article>
 
   <article>
@@ -63,12 +65,14 @@
       </code>
     </pre>
     <p>Qual o resultado? Veja abaixo: </p>
-    <?php
-      $nomeGabriel = "Giselle";
-      $nomeGabriel = "Rodrigo";
-      $nomeGabriel = "Gabriel";
-      echo "O nome é: $nomeGabriel"
-    ?>
+    <p class="code-result">
+      <?php
+        $nomeGabriel = "Giselle";
+        $nomeGabriel = "Rodrigo";
+        $nomeGabriel = "Gabriel";
+        echo "O nome é: $nomeGabriel"
+      ?>
+    </p>
   </article>
 
   <article>
@@ -81,10 +85,12 @@
       </code>
     </pre>
     <p>O código vai rodar? Veja o resultado:</p>
-    <?php
-      const PAÍS = "BRASIL";
-      echo "Sou do " . PAÍS;
-    ?>
+    <p class="code-result">
+      <?php
+        const PAÍS = "BRASIL";
+        echo "Sou do " . PAÍS;
+      ?>
+    </p>
     
     <p>
       E por incrível que pareça rodou mesmo com acento, apesar de
@@ -130,12 +136,14 @@
         echo "$xablauzin";
       </code>
     </pre>
-    <p>Veja o resultado:<br></p>
-    <?php
-      $xablau = "xablauzin";
-      $$xablau = "Opa beleza?";
-      echo "$xablauzin";
-    ?>
+    <p>Veja o resultado:</p>
+    <p class="code-result">
+      <?php
+        $xablau = "xablauzin";
+        $$xablau = "Opa beleza?";
+        echo "$xablauzin";
+      ?>
+    </p>
     <p>
       Parte 1:
       <br>
