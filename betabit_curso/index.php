@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../src/style/reset.css">
-  <link rel="stylesheet" href="../../src/util/prism/prism.css">
-  <link rel="stylesheet" href="../../src/style/base.css">
-  <link rel="stylesheet" href="../../src/style/style.css">
-  <link rel="stylesheet" href="../../src/style/responsive.css">
+  <link rel="stylesheet" href="../src/style/reset.css">
+  <link rel="stylesheet" href="../src/util/prism/prism.css">
+  <link rel="stylesheet" href="../src/style/base.css">
+  <link rel="stylesheet" href="../src/style/style.css">
+  <link rel="stylesheet" href="../src/style/responsive.css">
   <title>Hello World em PHP</title>
 </head>
 
@@ -600,7 +600,7 @@
       </section>
     </article>
   </main>
-  <script src="../../src/util/prism/scriptprism.js"></script>
+  <script src="../src/util/prism/scriptprism.js"></script>
 </body>
 
 </html>
