@@ -15,7 +15,7 @@
       <h1>Operadores Aritméticos</h1>
     </header>
     <main>
-      <section>
+      <article>
         <h2>Operadores aritméticos</h2>
         <ul>
           <li>+$a identidade | Conversão de $a para int ou float conforme apropriado.</li>
@@ -27,8 +27,8 @@
           <li>$a / $b divisão | 	Quociente de $a e $b.</li>
           <li>$a % $b módulo | 	Resto de $a dividido por $b | Mesmo sinal de $a</li>
         </ul>
-      </section>
-      <section>
+      </article>
+      <article>
         <h2>Curiosidade sobre concatenação e operadores aritméticos</h2>
         <p>
           O operador + não tem sobrecarga de funções, serve apenas para somar,
@@ -78,7 +78,7 @@
         $result = "2" . "2";
         var_dump($result);
       ?>
-      </section>
+      </article>
     </main>
     <script src="../../src/util/prism/prism.js"></script>
   </body>

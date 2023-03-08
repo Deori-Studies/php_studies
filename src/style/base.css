@@ -90,7 +90,7 @@ span {
   font-size: 1rem;
 }
 
-header, main, section, article {
+header {
   align-content: center;
   align-items: center;
   display: flex;
@@ -100,15 +100,40 @@ header, main, section, article {
   padding: 0.5rem;
 }
 
-main, section, article {
+main {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  padding: 0.5rem;
+}
+
+section {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  padding: 0.5rem;
+}
+
+article {
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 0 1rem #0009;
-  margin-bottom: 1.5rem;
-}
-
-header {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  padding: 0.5rem;
 }
 
 footer {

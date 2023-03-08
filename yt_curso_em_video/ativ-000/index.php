@@ -22,7 +22,7 @@
   </header>
   
   <main>
-    <section>
+    <article>
       <h2>Paturso</h2>
       <p>
         <?php
@@ -67,9 +67,9 @@
         string. Já o acento grave é útil quando você precisa incluir variáveis e 
         expressões PHP em uma string. Isso também será melhor estudado a frente.
       </p>
-    </section>
+    </article>
 
-    <section>
+    <article>
       <h2>Tags</h2>
       <p>
         PHP já teve duas formas:
@@ -113,9 +113,9 @@
           </tr>
         </table>
       </div>
-    </section>
+    </article>
 
-    <section>
+    <article>
       <h2>PHP Online - SANDBOX</h2>
       <p>
         Conheça a opção online para testar código php.<br>
@@ -124,7 +124,7 @@
         Depois selecione em <span class="c-bolder">Other Options</span> em <span class="c-bolder">Output</span>, o radio button <span class="c-bolder">HTML</span>.
         <a href="https://onlinephp.io/">https://onlinephp.io/</a>
       </p>
-    </section>
+    </article>
   </main>
   <script src="../../src/util/prism/prism.js"></script>
 </body>

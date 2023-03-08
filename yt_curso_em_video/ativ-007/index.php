@@ -17,7 +17,7 @@
 
   <h2>Apresente-se para nós</h2>
 
-  <section>
+  <article>
     <form action="cad.php" method="get">
       <label for="nome">Nome</label>
       <input type="text" name="nome" id="idnome">
@@ -25,14 +25,14 @@
       <input type="text" name="sobrenome" id="idsobrenome">
       <input type="submit" value="Enviar">
     </form>
-  </section>
-  <section>
+  </article>
+  <article>
     <p>
       Observe a diferença na forma de envio entre GET e POST,
       Get é pela url o outro pelo body da requisição.
       O Post está tão exposto quanto o GET, basta saber procurar.
     </p>
-  </section>
+  </article>
   <script src="../../src/util/prism/prism.js"></script>
 </body>
 </html>

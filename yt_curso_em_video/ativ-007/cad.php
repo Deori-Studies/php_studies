@@ -16,7 +16,7 @@
   </header>
 
   <main>
-    <section>
+    <article>
     <h2>Resultado do processamento</h2>
       <p>Código:</p>
       <pre>
@@ -26,8 +26,8 @@
           echo "&lt;p&gt;É um prazer te conhecer, $name $sname! Este é meu site&lt;/p&gt;";
         </code>
       </pre>
-    </section>
-    <section>
+    </article>
+    <article>
       <p>Resultado:</p>
       <?php
         $name = $_GET["nome"] ?? "Usuário"; // Operador de coalescência nula
@@ -36,8 +36,8 @@
         ?>
         <!-- Interessante estrutura de controle de histórico -->
         <p><a href="javascript:history.go(-1)">Voltar a página anterior</a></p>
-    </section>
-    <section>
+    </article>
+    <article>
     <?php
         echo '$_GET: ';
         var_dump($_GET);
@@ -64,7 +64,7 @@
           var_dump($_REQUEST);
         </code>
       </pre>
-    </section>
+    </article>
   </main>
   <script src="../../src/util/prism/prism.js"></script>
 </body>
