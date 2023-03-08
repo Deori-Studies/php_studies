@@ -8,6 +8,9 @@
   --lighter-white: #f8f8f8;
   --light-white: #cecece;
   --colored-main: rebeccapurple;
+  --colored-main-light: rgb(125, 70, 181);
+  --colored-main-extreme-light: rgb(241, 226, 255);
+  --colored-main-dark: rgb(81, 35, 128);
 }
 
 /* ELEMENTOS DA INTERFACE */
@@ -211,20 +214,20 @@ ul > li::marker {
 /* ELEMENTOS DE FORMULÁRIO */
 
 form {
-  background-color: rgba(55, 41, 145, 0.2);
+  background-color: var(--colored-main);
   border-radius: 1rem;
   padding: 1.5rem;
 }
 
 form label {
-  background-color: rgba(55, 41, 145, 0.2);
   border-radius: 0.5rem;
+  color: var(--lighter-white);
   display: block;
   font-size: 0.8rem;
   font-weight: 100;
   margin-bottom: 0;
   margin-top: 1rem;
-  padding: 0.3rem 0.7rem;
+  padding: 0.1rem 0.1rem;
   width: fit-content;
 }
 
@@ -232,13 +235,14 @@ input[type=text], [type=number], select, input[type=date],
 input[type=date], input[type=datetime], input[type=email], input[type=month],
 input[type=password], input[type=range], input[type=tel], input[type=time],
 input[type=week] {
-  border: 1rem solid #ccc;
+  background-color: var(--colored-main-extreme-light);
+  border: 0.2rem solid var(--colored-main-light);
   border-radius: 0.4rem;
   box-sizing: border-box;
   display: inline-block;
   font-size: 1rem;
   margin: 0.8rem 0;
-  padding: 1.2rem 2rem;
+  padding: 0.75rem 1rem;
   width: 100%;
 }
 
