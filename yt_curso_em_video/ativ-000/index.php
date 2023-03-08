@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../src/style/style.css">
-  <link rel="stylesheet" href="../../src/style/base.css">
-  <link rel="stylesheet" href="../../src/util/prism/prism.css">
   <link rel="stylesheet" href="../../src/style/reset.css">
+  <link rel="stylesheet" href="../../src/util/prism/prism.css">
+  <link rel="stylesheet" href="../../src/style/base.css">
+  <link rel="stylesheet" href="../../src/style/style.css">
+  <link rel="stylesheet" href="../../src/style/responsive.css">
   <title>Me livrando da maldição</title>
 </head>
 <body>
@@ -67,6 +68,7 @@
         expressões PHP em uma string. Isso também será melhor estudado a frente.
       </p>
     </section>
+
     <section>
       <h2>Tags</h2>
       <p>
@@ -112,6 +114,7 @@
         </table>
       </div>
     </section>
+
     <section>
       <h2>PHP Online - SANDBOX</h2>
       <p>
