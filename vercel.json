@@ -1,11 +1,11 @@
 {
   "functions": {
-    "api/*": {
-      "runtime": "vercel-php@0.5.2"
+    "api/index.php": {
+      "runtime": "vercel-php@0.4.0"
     }
   },
   "routes": [
-    { "src": "/(.*)",  "dest": "/api/index.php" },
-    { "src": "/scriptprism.js",  "dest": "/api/scriptprism.js" }
+    { "src": "/scriptprism.js",  "dest": "/api/scriptprism.js" },
+    { "src": "/",  "dest": "/api/index.php" }
   ]
 }
