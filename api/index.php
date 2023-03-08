@@ -19,7 +19,7 @@
     <article>
       <h2>Links</h2>
 
-      <a href="./yt_curso_em_video/ativ-000/index.php">
+      <a href="./api/studies/000">
         <button>Site Aprendizados - Curso</button>
       </a>
     </article>
