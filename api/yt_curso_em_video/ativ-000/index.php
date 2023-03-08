@@ -21,7 +21,7 @@
     <p>Livrai-me da maldição...</p>
     <nav>
       <a href="../../index.php"><button>Página Inicial</button></a>
-      <a href="../ativ-001/"><button>Próxima</button></a>
+      <a href="../ativ-001"><button>Próxima</button></a>
     </nav>
   </header>
   
