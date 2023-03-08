@@ -14,10 +14,11 @@
 </head>
 
 <?php
-  require "./src/style/reset.php";
-  require "./src/style/base.php";
-  require "./src/style/style.php";
-  require "./src/style/responsive.php";
+  require "reset.php";
+  require "prism.php";
+  require "base.php";
+  require "style.php";
+  require "responsive.php";
 ?>
 
 <body>
@@ -607,7 +608,7 @@
       </section>
     </article>
   </main>
-  <script src="../../src/util/prism/scriptprism.js"></script>
+  <script src="scriptprism.js"></script>
 </body>
 
 </html>

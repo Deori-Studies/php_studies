@@ -1,0 +1,344 @@
+<style type="text/css">
+  @charset "UTF-8";
+  
+  * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    font-size: 62.5%;
+  
+    --lighter-white: #f8f8f8;
+    --light-white: #cecece;
+    --colored-main: rebeccapurple;
+    --colored-main-light: rgb(145, 84, 206);
+    --colored-main-extreme-light: rgb(241, 226, 255);
+    --colored-main-dark: rgb(81, 35, 128);
+  }
+  
+  /* ELEMENTOS DA INTERFACE */
+  
+  body {
+    align-items: center;
+    background-attachment: fixed;
+    background-color: var(--lighter-white);
+    background-image: linear-gradient(180deg, white, var(--light-white));
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: fit-content;
+    width: auto;
+  }
+  
+  pre {
+    border: 0.1rem solid #333;
+    height: fit-content;
+    max-width: 100%;
+    overflow: scroll;
+    padding: 1rem;
+    width: fit-content;
+    white-space: pre-line;
+  }
+  
+  code {
+    background-color: #333;
+    max-width: 100%;
+    width: fit-content;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    width: 100%;
+  }
+  
+  p {
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  h1 {
+    color: var(--colored-main);
+    font-size: 3rem;
+    font-weight: bolder;
+    padding: 1rem;
+  }
+  
+  h2 {
+    color: var(--colored-main-light);
+    font-size: 2.5rem;
+    font-weight: bolder;
+    padding: 0.75rem;
+  }
+  
+  h3 {
+    color: var(--colored-main-light);
+    font-size: 2rem;
+    font-weight: 100;
+    padding: 0.5rem;
+  }
+  
+  h4 {
+    font-size: 1.8rem;
+    padding: 0.25rem;
+  }
+  
+  h5 {
+    font-size: 1.2rem;
+    padding: 0.1rem;
+  }
+  
+  h6 {
+    font-size: 0.8rem;
+    padding: 0;
+  }
+  
+  span {
+    font-size: 1rem;
+  }
+  
+  header {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+  
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  nav input[type=button], nav button {
+    background-color: rgba(102, 51, 153, 0.508);
+    width: fit-content;
+  }
+  
+  nav a {
+    background-color: #0000;
+    border-bottom: none;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    border: none;
+  }
+  
+  main {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+  
+  section {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+  
+  article {
+    align-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem #0009;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  footer {
+    background-color: #291f6c;
+    color: white;
+    display: block;
+    margin-top: auto;
+    padding: 0.5rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  a {
+    background-color: rgba(55, 41, 145, 0.1);
+    border-bottom: 0.05rem dotted #372991;
+    color: #15142b;
+    font-weight: 600;
+    padding: 0 0.3rem;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #372991;
+    border-bottom: 0.1rem solid #372991;
+  }
+  
+  /* TABELAS E LISTAS */
+  
+  table {
+    border-spacing: 0;
+    border: 0.05rem solid #372991;
+    margin: 1rem auto;
+    overflow: scroll;
+  }
+  
+  table th {
+    background-color: #372991;
+    color: white;
+    padding: 0.5rem;
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  table td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  table tr {
+    background-color: rgb(230, 230, 255);
+  }
+  
+  table tr:nth-child(odd) {
+    background-color: rgb(180, 180, 230);
+  }
+  
+  ul, ol {
+    list-style: disc;
+    list-style-type: disc;
+    margin: 1rem;
+    max-width: 90%;
+    padding: 0rem;
+    vertical-align: baseline;
+  }
+  
+  li {
+    font-size: 1rem;
+  }
+  
+  ul > li::marker {
+    color: rebeccapurple;
+  }
+  
+  /* ELEMENTOS DE FORMULÁRIO */
+  
+  form {
+    background-color: var(--colored-main);
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+  
+  form label {
+    border-radius: 0.5rem;
+    color: var(--lighter-white);
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 100;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    padding: 0.1rem 0.1rem;
+    width: fit-content;
+  }
+  
+  input[type=text], [type=number], select, input[type=date],
+  input[type=date], input[type=datetime], input[type=email], input[type=month],
+  input[type=password], input[type=range], input[type=tel], input[type=time],
+  input[type=week] {
+    background-color: var(--colored-main-extreme-light);
+    border: 0.2rem solid var(--colored-main-light);
+    border-radius: 0.4rem;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0.8rem 0;
+    padding: 0.75rem 1rem;
+    width: 100%;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 0.4rem;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  input[type=reset] {
+    background-color: #eb9903;
+    border: none;
+    border-radius: 0.4rem;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+  
+  input[type=reset]:hover {
+    background-color: #c27013;
+  }
+  
+  input[type=button], button {
+    background-color: #372991;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+  
+  input[type=button]:hover, button:hover {
+    background-color: #291f6c;
+  }
+  
+  fieldset {
+    border: 0.05rem dotted #372991;
+  }
+  
+  fieldset > legend {
+    background-color: rgba(55, 41, 145, 0.2);
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 100;
+    padding: 0.3rem 0.7rem;
+  }
+  
+  input[type=radio] + label, input[type=checkbox] + label {
+    background-color: rgba(0, 0, 0, 0);
+    display: inline-block;
+    font-size: 1rem;
+  }
+</style>
