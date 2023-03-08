@@ -608,7 +608,9 @@
       </section>
     </article>
   </main>
-  <script src="scriptprism.js"></script>
+  <?php
+    require "scriptprism.php";
+  ?>
 </body>
 
 </html>
