@@ -15,8 +15,8 @@
   <header>
     <h1>Tipos primitidos do PHP</h1>
     <nav>
-      <a href="/studies/004/"><button>Anterior</button></a>
-      <a href="/studies/006/"><button>Próxima</button></a>
+      <a href="../ativ-004/"><button>Anterior</button></a>
+      <a href="../ativ-006/"><button>Próxima</button></a>
     </nav>
   </header>
 

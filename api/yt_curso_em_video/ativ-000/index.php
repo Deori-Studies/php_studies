@@ -20,8 +20,8 @@
     </h1>
     <p>Livrai-me da maldição.</p>
     <nav>
-      <a href="/"><button>Página Inicial</button></a>
-      <a href="/studies/000/"><button>Próxima</button></a>
+      <a href="../../index.php"><button>Página Inicial</button></a>
+      <a href="../ativ-001/"><button>Próxima</button></a>
     </nav>
   </header>
   

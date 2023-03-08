@@ -18,8 +18,8 @@
   <header>
     <h1>Manipulação de Strings - PHP</h1>
     <nav>
-      <a href="/studies/005/"><button>Anterior</button></a>
-      <a href="/studies/007/"><button>Próxima</button></a>
+      <a href="../ativ-005/"><button>Anterior</button></a>
+      <a href="../ativ-007/"><button>Próxima</button></a>
     </nav>
   </header>
   <main>

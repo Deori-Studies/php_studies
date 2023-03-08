@@ -17,8 +17,8 @@
   <header>
     <h1>Formulários com PHP - Frontend</h1>
     <nav>
-      <a href="/studies/006/"><button>Anterior</button></a>
-      <a href="/studies/008/"><button>Próxima</button></a>
+      <a href="../ativ-006/"><button>Anterior</button></a>
+      <a href="../ativ-008/"><button>Próxima</button></a>
     </nav>
   </header>
 

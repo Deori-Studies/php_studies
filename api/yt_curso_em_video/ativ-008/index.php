@@ -15,7 +15,7 @@
     <header>
       <h1>Operadores Aritméticos</h1>
       <nav>
-      <a href="/studies/007/"><button>Anterior</button></a>
+      <a href="/ativ-007/"><button>Anterior</button></a>
       <a href="/"><button>Página Inicial</button></a>
     </nav>
     </header>
