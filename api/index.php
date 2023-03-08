@@ -16,11 +16,13 @@
     <h1>Link para os estudos</h1>
   </header>
   <main>
-    <nav>
+    <article>
+      <h2>Links</h2>
+
       <a href="./yt_curso_em_video/ativ-000/index.php">
         <button>Site Aprendizados - Curso</button>
       </a>
-    </nav>
+    </article>
   </main>
 </body>
 </html>
