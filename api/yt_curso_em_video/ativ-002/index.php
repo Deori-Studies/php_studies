@@ -151,6 +151,6 @@
       </p>
     </article>
   </main>
-  <script src="../../src/util/prism/prism.js"></script>
+  <script src="../../src/util/prism/scriptprism.js"></script>
 </body>
 </html>

@@ -39,7 +39,7 @@
       O Post está tão exposto quanto o GET, basta saber procurar.
     </p>
   </article>
-  <script src="../../src/util/prism/prism.js"></script>
+  <script src="../../src/util/prism/scriptprism.js"></script>
 </body>
 
 </html>

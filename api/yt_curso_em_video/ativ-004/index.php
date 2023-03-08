@@ -181,6 +181,6 @@
       Olha nas devtools do navegador como o PHP envia apenas html para o cliente não expondo o código da sua aplicação.
     </p>
   </article>
-  <script src="../../src/util/prism/prism.js"></script>
+  <script src="../../src/util/prism/scriptprism.js"></script>
 </body>
 </html>
