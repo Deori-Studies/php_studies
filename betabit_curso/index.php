@@ -106,20 +106,36 @@
         <p>Usa-se $ para declarar variáveis e const NOME_VARIAVEL para constantes</p>
         <pre>
           <code class="language-php">
-            &lt;?php
               $variavel = "variavel";
               const CONSTANTE = "CONSTANTE";
-              echo "Eu sou $variavel e eu sou " . CONSTANTE;
-            ?&gt;
+              define("DEFINECONST", "Fui criado com a função define.");
+              echo "Eu sou $variavel e eu sou " . CONSTANTE . " | " . DEFINECONST;
+              echo("&lt;br&gt;");
+              define("CONST_ARRAY", [1, 2, 4, 7]);
+              echo "Arrays constantes só existem em versão 7 ou acima.<br>";
+              # Atenção define aceitava 3 parâmetros
+              # mas na versão 7.3 deixou de aceitar
+              # Era o último parâmetro, tipo bool para dizer se
+              # o nome da const ia ser case-sensitive ou não.
+              # define("eXeMplO", "oi", false);
           </code>
         </pre>
         <p>Observe que é necessário usar o operador . de concatenação</p>
         <p>Resultado:</p>
         <h3 class="code-result">
           <?php
-            $variavel = "variavel";
-            const CONSTANTE = "CONSTANTE";
-            echo "Eu sou $variavel e eu sou " . CONSTANTE;
+              $variavel = "variavel";
+              const CONSTANTE = "CONSTANTE"; # CONSTANTES SÃO GLOBAIS
+              define("DEFINECONST", "Fui criado com a função define.");
+              echo "Eu sou $variavel e eu sou " . CONSTANTE . " | " . DEFINECONST;
+              echo "<br>";
+              define("CONST_ARRAY", [1, 2, 4, 7]);
+              echo "Arrays constantes só existem em versão 7 ou acima.<br>";
+              # Atenção define aceitava 3 parâmetros
+              # mas na versão 7.3 deixou de aceitar
+              # Era o último parâmetro, tipo bool para dizer se
+              # o nome da const ia ser case-sensitive ou não.
+              # define("eXeMplO", "oi", false);
           ?>
         </h3>
         <h4>Curiosidades sobre Variáveis em PHP</h4>
