@@ -1113,62 +1113,373 @@
 
     <article>
       <h2>Estruturas de controle</h2>
-      <p>
-        Existem outras estruturas de controle além das mostradas abaixo, acompanhe
-        <a href="https://www.php.net/manual/pt_BR/language.control-structures.php">
-          aqui
-        </a>
-        .
-      </p>
-      <p>
+      <section>
+        <h3>Estruturas lógicas</h3>
+        <p>
+          Existem outras estruturas de controle além das mostradas abaixo, acompanhe
+          <a href="https://www.php.net/manual/pt_BR/language.control-structures.php">
+            aqui
+          </a>
+          .
+        </p>
+        <p>
+          <pre>
+            <code class="language-php">
+              $condicao0 = "a";
+              $condicao1 = "b";
+              if ($condicao0 == "condição verdadeira") {
+                echo $condicao0;
+              } else if ($condicao1 = "condição 2 verdadeira") {
+                echo $condicao1;
+              } else {
+                echo "Nenhuma das duas é verdadeira&lt;br&gt;";
+              }
+              switch ($condicao1) {
+                case 'a':
+                  echo $condicao0;
+                  break;
+                default:
+                  echo "condicao1 não é &lt;br&gt;";
+                  break;
+              }
+            </code>
+          </pre>
+        </p>
+        <p>
+          <?php
+          $condicao0 = "a";
+          $condicao1 = "b";
+          if ($condicao0 == "condição verdadeira") {
+            echo $condicao0;
+          } else if ($condicao1 == "condição 2 verdadeira") {
+            echo $condicao1;
+          } else {
+            echo "Nenhuma das duas é verdadeira<br>";
+          }
+          switch ($condicao1) {
+            case 'a':
+              echo $condicao0;
+              break;
+            default:
+              echo "condicao1 não é a<br>";
+              break;
+          }
+          ?>
+        </p>
+      </section>
+
+      <section>
+        <h3>Estruturas de repetição</h3>
         <pre>
           <code class="language-php">
-            $condicao0 = "a";
-            $condicao1 = "b";
+            $x = 0;
 
-            if ($condicao0 == "condição verdadeira") {
-              echo $condicao0;
-            } else if ($condicao1 = "condição 2 verdadeira") {
-              echo $condicao1;
-            } else {
-              echo "Nenhuma das duas é verdadeira&lt;br&gt;";
+            while ($x &lt;= 5) {
+              echo "O número é: $x &lt;br&gt;";
+              $x++;
             }
 
-            switch ($condicao1) {
-              case 'a':
-                echo $condicao0;
-                break;
-              default:
-                echo "condicao1 não é &lt;br&gt;";
-                break;
+            echo "&lt;br&gt;&lt;br&gt;";
+
+            $y = 0;
+            do {
+              // $y = 0; NÃO FAÇA ISSO, DERRETEU O CÉREBRO?
+              echo "O número é: $y &lt;br&gt;";
+              $y++;
+            } while ($y &lt;= 5);
+
+            echo "&lt;br&gt;&lt;br&gt;";
+
+            for ($count = 0; $count &lt;= 10; $count++){
+              echo "O número é: $count&lt;br&gt;";
+            }
+
+            echo "&lt;br&gt;&lt;br&gt;";
+
+            foreach([1,2,3,4,10,20,30] as $valor) {
+              echo "Número é: $valor &lt;br&gt;";
             }
           </code>
         </pre>
-      </p>
-      <p>
+        <p>Resultado: </p>
+        <p class="code-result">
+          <?php
+            $x = 0;
+
+            while ($x <= 5) {
+              echo "O número é: $x <br>";
+              $x++;
+            }
+
+            echo "<br><br>";
+
+            $y = 0;
+            do {
+              // $y = 0; NÃO FAÇA ISSO, DERRETEU O CÉREBRO?
+              echo "O número é: $y <br>";
+              $y++;
+            } while ($y <= 5);
+
+            echo "<br><br>";
+
+            for ($count = 0; $count <= 10; $count++){
+              echo "O número é: $count<br>";
+            }
+
+            echo "<br><br>";
+
+            foreach([1,2,3,4,10,20,30] as $valor) {
+              echo "Número é: $valor <br>";
+            }
+          ?>
+        </p>
+      </section>
+    </article>
+
+    <article>
+      <h2>Funções</h2>
+      <pre>
+        <code class="language-php">
+          function escreverMensagem(string $param1 = "Mundo") { 
+            return "Olá $param1 <br>";
+          }
+
+          echo escreverMensagem("Dimitri"); // Não case sensitive
+          echo escreverMensagem(); // Parametro Default
+        </code>
+      </pre>
+      <p>Resultado: </p>
+      <p class="code-result">
         <?php
-        $condicao0 = "a";
-        $condicao1 = "b";
+          function escreverMensagem(string $param1 = "Mundo") { 
+            return "Olá $param1 <br>";
+          }
 
-        if ($condicao0 == "condição verdadeira") {
-          echo $condicao0;
-        } else if ($condicao1 == "condição 2 verdadeira") {
-          echo $condicao1;
-        } else {
-          echo "Nenhuma das duas é verdadeira<br>";
-        }
-
-        switch ($condicao1) {
-          case 'a':
-            echo $condicao0;
-            break;
-          default:
-            echo "condicao1 não é a<br>";
-            break;
-        }
+          echo escreverMensagem("Dimitri"); // Não case sensitive
+          echo escreverMensagem(); // Parametro Default
         ?>
       </p>
+    </article>
+    <article>
+      <h2>Arrays e matrizes</h2>
+      <section>
+        <h3>Declarando e manipulando</h3>
+        <pre>
+          <code class="language-php">
+            $carros = array("Lamborghini", "BMW", "Ferrari");
+            $carros = ["Fusca", "Uno", "Ferrari"];
+            $carros[2] = "Gol";
+  
+            echo count($carros);
+            echo "&lt;br&gt;";
+            echo $carros[2];
+  
+            foreach($carros as $carro) {
+              echo $carro."&lt;br&gt;";
+            }
+  
+            echo "Agora matrizes &lt;br&gt;";
+  
+            $idades = array("Dimitri" =&gt; 30, "Maria" =&gt; 15);
+            echo $idades["Dimitri"]."&lt;br&gt;";
+            $idades["Dimitri"] = 20;
+            foreach($idades as $nome =&gt; $idade) {
+              echo "O nome é: $nome e a idade é $idade &lt;br&gt;";
+            }
+          </code>
+        </pre>
+        <p class="code-result">
+          <?php
+            $carros = array("Lamborghini", "BMW", "Ferrari");
+            $carros = ["Fusca", "Uno", "Ferrari"];
+            $carros[2] = "Gol";
+  
+            echo count($carros);
+            echo "<br>";
+            echo $carros[2];
+  
+            foreach($carros as $carro) {
+              echo $carro."<br>";
+            }
+  
+            echo "Agora matrizes <br><br>";
+  
+            $idades = array("Dimitri" => 30, "Maria" => 15);
+            echo $idades["Dimitri"]."<br>";
+            $idades["Dimitri"] = 20;
+            foreach($idades as $nome => $idade) {
+              echo "O nome é: $nome e a idade é $idade <br>";
+            }
+          ?>
+        </p>
+      </section>
+      <section>
+        <h3>Funções de arrays</h3>
+        <pre>
+          <code class="language-php">
+            $carros = array("Lamborghini", "BMW", "Ferrari");
+            foreach ($carros as $carro) {
+              echo $carro . "&lt;br&gt;";
+            }
+            sort($carros);
+            echo "&lt;br&gt;&lt;br&gt;";
+            $carros = array("Lamborghini", "BMW", "Ferrari");
+            foreach ($carros as $carro) {
+              echo $carro . "&lt;br&gt;";
+            }
+            rsort($carros);
+            echo "&lt;br&gt;&lt;br&gt;";
+            $carros = array("Lamborghini", "BMW", "Ferrari");
+            foreach ($carros as $carro) {
+              echo $carro . "&lt;br&gt;";
+            }
+            echo "&lt;br&gt;&lt;br&gt;";
+            echo "&lt;br&gt;&lt;br&gt;";
 
+            $idades = array("Dimitri" =&gt; 30, "Maria" =&gt; 15);
+            asort($idades); // Valor crescente, arsort para decrescente
+            foreach ($idades as $nome =&gt; $idade) {
+              echo "$nome tem $idade" . "&lt;br&gt;";
+            }
+
+            echo "&lt;br&gt;&lt;br&gt;";
+
+            ksort($idades); // Chave crescente, krsort para decrescente
+            foreach ($idades as $nome =&gt; $idade) {
+              echo "$nome tem $idade" . "&lt;br&gt;";
+            }
+          </code>
+        </pre>
+        <p>Resultado:</p>
+        <p class="code-result">
+          <?php
+            $carros = array("Lamborghini", "BMW", "Ferrari");
+            foreach ($carros as $carro) {
+              echo $carro . "<br>";
+            }
+            sort($carros);
+            echo "<br><br>";
+            $carros = array("Lamborghini", "BMW", "Ferrari");
+            foreach ($carros as $carro) {
+              echo $carro . "<br>";
+            }
+            rsort($carros);
+            echo "<br><br>";
+            $carros = array("Lamborghini", "BMW", "Ferrari");
+            foreach ($carros as $carro) {
+              echo $carro . "<br>";
+            }
+            echo "<br><br>";
+            echo "<br><br>";
+
+            $idades = array("Dimitri" => 30, "Maria" => 15);
+            asort($idades); // Valor crescente, arsort para decrescente
+            foreach ($idades as $nome => $idade) {
+              echo "$nome tem $idade" . "<br>";
+            }
+
+            echo "<br><br>";
+
+            ksort($idades); // Chave crescente, krsort para decrescente
+            foreach ($idades as $nome => $idade) {
+              echo "$nome tem $idade" . "<br>";
+            }
+          ?>
+        </p>
+      </section>
+    </article>
+
+    <article>
+      <h2>Superglobais</h2>
+      <p>Não vou especificar muitas delas, apenas $_SERVER por enquanto, segue abaixo:</p>
+      <div class="overflow-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Chave</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php
+              foreach ($_SERVER as $key => $val) {
+                echo "<tr><td>$key</td><td>$val</td></tr>";
+              }
+            ?>
+          </tbody>
+        </table>
+      </div>
+    </article>
+    <article>
+      <h2>$_GET e $_POST</h2>
+      <section>
+        <h3>$_GET</h3>
+        <p>
+          PELO AMOR DE DEUS é errado falar que POST é "seguro", a única diferença
+          é que ele vai pelo BODY da requisição, quem sabe procurar ACHA.
+        </p>
+        <p>Atenção a dica de segurança, sobre filtrar caracteres pra evitar xsitescript</p>
+        <pre>
+          <code class="language-php">
+            // url/index.php?nome="Dimitri"
+            // Se fizer:
+            echo $_GET['nome'];
+            // O resultado será Dimitri
+            // Dá pra passar isso usando links, ex:
+            // href="index.php?nome=Dimitri&idade=32
+            // href="?nome=Dimitri,idade=32
+            // Use isset para checar se existe a chave no GET e atribuir a uma variável:
+            if (isset($_GET['nome'])) {
+              $nome = htmlspecialchars($_GET['nome']); // Tem que fazer mais coisas. Isso não basta.
+            } else {
+              $nome = "Mundo";
+            }
+            // Formulários usam vários methods. get post, put, delete, entre outros.
+            // action é para enviar para outra página php carregando ela
+            // e atualizando a variável $_GET.
+          </code>
+        </pre>
+      </section>
+      <section>
+        <h3>$_POST</h3>
+        <p>
+        De novo, o POST NÃO é mais "SEGURO" do que GET.
+        <br><br>
+        Quanto à segurança, eles são inerentemente iguais. Embora seja verdade
+        que o POST não expõe informações via URL, ele expõe tantas informações
+        quanto um GET na comunicação de rede real entre o cliente e o servidor.
+        Se você precisar passar informações confidenciais, sua primeira linha de
+        defesa seria passá-las usando HTTP Seguro.
+        <br><br>
+        As postagens GET ou string de consulta são realmente boas para as
+        informações necessárias para marcar um item em particular ou para
+        ajudar na otimização do mecanismo de pesquisa e na indexação de itens.
+        <br><br>
+        O POST é adequado para formulários padrão usados ​​para enviar dados únicos.
+        Eu não usaria GET para postar formulários reais, a menos que talvez
+        em um formulário de pesquisa em que você queira permitir que o usuário
+        salve a consulta em um marcador ou algo nesse sentido.
+      </p>
+      <a href="https://www.alura.com.br/artigos/diferencas-entre-get-e-post">
+        Básico sobre GET E POST
+      </a>
+        <pre>
+          <code class="language-php">
+            // Post dá pra passar por formulário
+            $valor = $_POST['nome'];
+            function limpaPost($valor) { // Limpa entrada mas será suficiente?
+              $valor = trim($valor);
+              $valor = stripslashes($valor);
+              $valor = htmlspecialchars($valor);
+              return $valor;
+            }
+          </code>
+        </pre>
+      </section>
+    </article>
+    <article>
+      <h1>Atividade 000</h1>
+      <a href="ativ-000/form.php">Formulário</a>
     </article>
   </main>
   <script src="../src/util/prism/scriptprism.js"></script>

@@ -26,3 +26,11 @@ div.code-toolbar pre {
   text-align: left;
   width: fit-content;
 }
+
+.red-border {
+  border: 0.2rem solid red;
+}
+
+.error-message {
+  color: red;
+}
