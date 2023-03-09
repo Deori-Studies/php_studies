@@ -27,7 +27,7 @@ div.code-toolbar pre {
   width: fit-content;
 }
 
-.red-border {
+input.red-border {
   border: 0.2rem solid red;
 }
 
