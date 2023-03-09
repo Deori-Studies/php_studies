@@ -738,7 +738,20 @@
       </section>
       <pre>
         <code class="language-php">
-
+          $numeros = [1, 10, 40, 5000, -20, 15];
+          $num1 = -4;
+          $num2 = 4;
+          
+          echo pi() . "&lt;br&gt;";
+          echo min($numeros) . "&lt;br&gt;";
+          echo max($numeros) . "&lt;br&gt;";
+          echo abs($num1) . "&lt;br&gt;";
+          echo sqrt($num2) . "&lt;br&gt;";
+          echo round(10.51) . "&lt;br&gt;";
+          echo round(10.49) . "&lt;br&gt;";
+          echo round(10.50) . "&lt;br&gt;";
+          echo rand(1, 10) . "&lt;br&gt;";
+          echo min($numeros) . "&lt;br&gt;";
         </code>
       </pre>
       <p>Resultado:</p>
