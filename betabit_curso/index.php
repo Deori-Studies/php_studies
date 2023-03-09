@@ -1112,7 +1112,63 @@
     </article>
 
     <article>
-      <h2></h2>
+      <h2>Estruturas de controle</h2>
+      <p>
+        Existem outras estruturas de controle além das mostradas abaixo, acompanhe
+        <a href="https://www.php.net/manual/pt_BR/language.control-structures.php">
+          aqui
+        </a>
+        .
+      </p>
+      <p>
+        <pre>
+          <code class="language-php">
+            $condicao0 = "a";
+            $condicao1 = "b";
+
+            if ($condicao0 == "condição verdadeira") {
+              echo $condicao0;
+            } else if ($condicao1 = "condição 2 verdadeira") {
+              echo $condicao1;
+            } else {
+              echo "Nenhuma das duas é verdadeira&lt;br&gt;";
+            }
+
+            switch ($condicao1) {
+              case 'a':
+                echo $condicao0;
+                break;
+              default:
+                echo "condicao1 não é &lt;br&gt;";
+                break;
+            }
+          </code>
+        </pre>
+      </p>
+      <p>
+        <?php
+        $condicao0 = "a";
+        $condicao1 = "b";
+
+        if ($condicao0 == "condição verdadeira") {
+          echo $condicao0;
+        } else if ($condicao1 == "condição 2 verdadeira") {
+          echo $condicao1;
+        } else {
+          echo "Nenhuma das duas é verdadeira<br>";
+        }
+
+        switch ($condicao1) {
+          case 'a':
+            echo $condicao0;
+            break;
+          default:
+            echo "condicao1 não é a<br>";
+            break;
+        }
+        ?>
+      </p>
+
     </article>
   </main>
   <script src="../src/util/prism/scriptprism.js"></script>
