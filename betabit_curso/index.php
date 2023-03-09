@@ -617,7 +617,10 @@
     </article>
 
     <article>
-      <h2>Manipulação de números</h2>
+      <h2>Operadores e manipulação</h2>
+      <a href="https://www.php.net/manual/pt_BR/language.operators.php">
+        Manual - Operadores em PHP
+      </a>
       <section>
         <h3>Operadores aritméticos</h3>
         <ul>
@@ -632,7 +635,7 @@
         </ul>
       </section>
       <section>
-        <h3>Curiosidade sobre concatenação e operadores aritméticos</h3>
+        <h3>Operadores de sequência(concatenação) e observações sobre operadores aritméticos</h3>
         <p>
           O operador + não tem sobrecarga de funções, serve apenas para somar,
           mas pelo que parece ele converte string numéricas em números, soma
@@ -685,6 +688,323 @@
         ?>
       </p>
       </section>
+
+      <section>
+        <h3>Operadores de atribuição</h3>
+        <a href="https://www.php.net/manual/pt_BR/language.operators.assignment.php">
+          Operadores de atribuição
+        </a>
+
+        <p>Aceita combinação do operador de atribuição "=" com operadores aritméticos</p>
+        <p>
+          <?php
+            $a = 2;
+            echo "a = 2: $a<br>";
+            $b = ($a = 4) + 5;
+            echo "a: $a | b: $b<br>";
+            $a += 5;
+            echo "a + 5: $a<br>";
+            $a -= 1;
+            echo "a - 1: $a<br>";
+            $a *= 2;
+            echo "a * 2: $a<br>";
+            $a /= 3;
+            echo "a /3: $a<br>";
+            $b = "Bom ";
+            echo "b: $b<br>";
+            $b .= "Dia!";
+            echo "b.Dia: $b<br>";
+            $a = 3;
+            $b = &$a; // $b é uma referência de $a
+
+            print "$a\n"; // imprime 3
+            print "$b\n"; // imprime 3
+            $a = 4; // modificamos $a
+            print "$a\n"; // imprime 4
+            print "$b\n"; // imprime 4 também, pois $b é uma referência de $a, que foi
+                          // modificada
+          ?>
+        </p>
+      </section>
+
+      <section>
+        <h3>Tabela de operadores resumida</h3>
+        <p>Como são muitos operadores a tabela abaixo fará um resumo básico</p>
+        <div class="overflow-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Operadores</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="#">Operadores Aritméticos</a>
+                </td>
+                <td>
+                  +, -, *, /, %, **, ++, --
+                </td>
+                <td>
+                  Realizam operações matemáticas básicas, como adição, subtração, multiplicação e divisão.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#">Operadores de Atribuição</a>
+                </td>
+                <td>
+                  =, +=, -=, *=, /=, %=, **=
+                </td>
+                <td>
+                  Atribuem valores a variáveis, geralmente em combinação com operadores aritméticos.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#">Operadores bit a bit (bitwise)</a>
+                </td>
+                <td>
+                  &, |, ^, ~, <<, >>
+                </td>
+                <td>
+                  Realizam operações em nível de bits em valores numéricos.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#">Operadores de Comparação</a>
+                </td>
+                <td>
+                  ==, !=, ===, !==, <, >, <=, >=, <=>, ??, ?:
+                </td>
+                <td>
+                  Compararam valores e retornam verdadeiro ou falso.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#">Operadores de controle de erro</a>
+                </td>
+                <td>
+                  @
+                </td>
+                <td>
+                  Suprime mensagens de erro para uma expressão específica.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#">Operadores de Execução</a>
+                </td>
+                <td>
+                  ``, shell_exec(), system(), exec(), passthru()
+                </td>
+                <td>
+                  Executam comandos em um shell do sistema operacional.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#">Operadores de Incremento/Decremento</a>
+                </td>
+                <td>
+                  ++, --
+                </td>
+                <td>
+                  Incrementam ou decrementam o valor de uma variável em uma unidade.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#">Operadores Lógicos</a>
+                </td>
+                <td>
+                  &&, ||, !, and, or, xor
+                </td>
+                <td>
+                  Realizam operações lógicas em valores booleanos ou valores que podem ser convertidos em booleanos.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#">Operadores de String</a>
+                </td>
+                <td>
+                  ., .=
+                </td>
+                <td>
+                  Concatenam ou atribuem strings.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#">Operadores de Arrays</a>
+                </td>
+                <td>
+                  +,
+                </td>
+                <td>
+                  Realizam operações em arrays, como mesclagem de arrays e verificação da existência de valores em um array.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#">Operadores de tipo</a>
+                </td>
+                <td>
+                  instanceof, is_array(), is_bool(), is_callable(), is_float(), is_int(), is_null(), is_numeric(), is_object(), is_resource(), is_scalar(), is_string(), isset(), empty()
+                </td>
+                <td>
+                  Verificam o tipo ou a existência de variáveis ou valores em variáveis.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3>Tabela de precedência dos operadores</h3>
+        <p>
+          A tabela seguinte mostra a precedência dos operadores, 
+          com a maior precedência no começo. Operadores com a mesma 
+          precedência estão na mesma linha, nesses casos a associatividade
+          deles decidirá qual ordem eles serão avaliados.
+        </p>
+
+        <div class="overflow-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Associação</th>
+                <th>Operadores</th>
+                <th>Informação Adicional</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>não associativo</td>
+                <td>clone new</td>
+                <td>clone e new</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>[</td>
+                <td>array()</td>
+              </tr>
+              <tr>
+                <td>direita</td>
+                <td>**</td>
+                <td>aritmética</td>
+              </tr>
+              <tr>
+                <td>direita</td>
+                <td>++ -- ~ (int) (float) (string) (array) (object) (bool) @</td>
+                <td>types e incremento/decremento</td>
+              </tr>
+              <tr>
+                <td>não associativo</td>
+                <td>instanceof</td>
+                <td>tipos</td>
+              </tr>
+              <tr>
+                <td>direita</td>
+                <td>!</td>
+                <td>lógicos</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>*</td>
+                <td>aritmética</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>/ %</td>
+                <td>aritmética</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>+ - .</td>
+                <td>aritmética e string</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>&lt;&lt; &gt;&gt;</td>
+                <td>bits</td>
+              </tr>
+              <tr>
+                <td>não associativo</td>
+                <td>&lt; &lt;= &gt; &gt;=</td>
+                <td>comparação</td>
+              </tr>
+              <tr>
+                <td>não associativo</td>
+                <td>== != === !== &lt;&gt; &lt;=&gt;</td>
+                <td>comparação</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>&amp;</td>
+                <td>bits e referências</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>^</td>
+                <td>bits</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>|</td>
+                <td>bits</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>&amp;&amp;</td>
+                <td>lógicos</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>||</td>
+                <td>lógicos</td>
+              </tr>
+              <tr>
+                <td>direita</td>
+                <td>??</td>
+                <td>comparação</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>? :</td>
+                <td>ternário</td>
+              </tr>
+              <tr>
+                <td>direita</td>
+                <td>= += -= *= **= /= .= %= &= |= ^= <<= >>=</td>
+                <td>atribuição</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>and</td>
+                <td>lógicos</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>xor</td>
+                <td>lógicos</td>
+              </tr>
+              <tr>
+                <td>esquerda</td>
+                <td>or</td>
+                <td>lógicos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <section>
         <h3>Conversão de valores</h3>
         <pre>
