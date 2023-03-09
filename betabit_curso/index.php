@@ -732,6 +732,38 @@
           ?>
         </p>
       </section>
+
+      <section>
+        <h3>Funções matemáticas</h3>
+      </section>
+      <pre>
+        <code class="language-php">
+
+        </code>
+      </pre>
+      <p>Resultado:</p>
+      <p>
+        <?php
+          $numeros = [1, 10, 40, 5000, -20, 15];
+          $num1 = -4;
+          $num2 = 4;
+          
+          echo pi() . "<br>";
+          echo min($numeros) . "<br>";
+          echo max($numeros) . "<br>";
+          echo abs($num1) . "<br>";
+          echo sqrt($num2) . "<br>";
+          echo round(10.51) . "<br>";
+          echo round(10.49) . "<br>";
+          echo round(10.50) . "<br>";
+          echo rand(1, 10) . "<br>";
+          echo min($numeros) . "<br>";
+        ?>
+      </p>
+    </article>
+
+    <article>
+      <h2></h2>
     </article>
   </main>
   <script src="../src/util/prism/scriptprism.js"></script>
