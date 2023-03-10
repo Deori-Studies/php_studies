@@ -59,21 +59,34 @@ Conteúdo Oficial Estudado:
 
 ## Cases e Conteúdo feito
 ### Cadastro
+formulário de cadastro de login completo com validação completa e com cadastro realizado em banco de dados MySQL.
+
 ![](./src/img/cadastro.png)
 
 ### Login
 ![](./src/img/login.png)
 
+ Tela de login, no momento apenas frontend, faltando as validações de email e senha, acesso ao banco de dados para conferência da senha e geração de token usando as técnicas de cookies ou session/local storage.
+
+
 ### C.R.U.D
+Formulário de clientes - CRUD completo com validação completa de nome, email e cadastro no banco de dados MySQL.
+
 ![](./src/img/crud1.png)
 ![](./src/img/crud2.png)
 ![](./src/img/crud3.png)
 
 ### Form simples
+Formulário básico sem validação
+
 ![](./src/img/Form-simples.png)
 
 ### Conteudo BetaBit - Documentação de aprendizado em PHP
+Documentação geral do conteúdo oficial feita utilizando PHP e técnicas em JS para melhor visualização de código e resultado. (metadoc);
+
 ![](./src/img/conteudobetabit.png)
 
 ### Conteúdo Curso em vídeo - Documentação em PHP
+Documentação geral do curso em vídeo feita utilizando PHP e técnicas em JS para melhor visualização de código e resultado. (metadoc);
+
 ![](./src/img/documentacaoatividadephp.png)
