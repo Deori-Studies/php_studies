@@ -12,17 +12,23 @@
     $usuario = $sql->fetch(PDO::FETCH_ASSOC); // Matriz associativa | Key Value
 
     if($usuario) {
-      $token = sha1(uniqid().date('d-m-Y-H-i-s'));
-
-      // Se ele sempre atualizar o token é um problema caso o usuário precise logar em vários locais.
-      $sql = $pdo->prepare("UPDATE usuarios SET token=? WHERE email=? AND senha=?");
-      if($sql->execute(array($token, $email, $senha_cript))) {
-        $_SESSION['TOKEN'] = $token;
-        header('location: restrita.php');
+      if($usuario['status'] === "confirmado") {
+        $token = sha1(uniqid().date('d-m-Y-H-i-s'));
+  
+        // Se ele sempre atualizar o token é um problema caso o usuário precise logar em vários locais.
+        $sql = $pdo->prepare("UPDATE usuarios SET token=? WHERE email=? AND senha=?");
+        if($sql->execute(array($token, $email, $senha_cript))) {
+          $_SESSION['TOKEN'] = $token;
+          header('location: restrita.php');
+        } else {
+          $erro_login = "Usuário e/ou senha incorretos!";
+         }
+        } else {
+          $erro_login = "Email não confirmado!";
+        }
+      } else {
+        $erro_login = "Usuário e/ou senha incorretos!";
       }
-    } else {
-      $erro_login = "Usuário ou senha incorretos!";
-    }
   }
 ?>
 
