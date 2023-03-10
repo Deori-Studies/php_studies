@@ -626,12 +626,12 @@
         <ul>
           <li>+$a identidade | Conversão de $a para int ou float conforme apropriado.</li>
           <li>-$a negação | Oposto de $a.</li>
-          <li>$a + $b adição | 	Soma de $a e $b.</li>
-          <li>$a - $b subtração | 	Diferença entre $a e $b.</li>
+          <li>$a + $b adição | Soma de $a e $b.</li>
+          <li>$a - $b subtração | Diferença entre $a e $b.</li>
           <li>$a * $b multiplicação | Produto de $a e $b.</li>
           <li>$a ** $b exponenciação | Resultado de $a elevado a $b. APENAS PHP 5.6.0 ou maior</li>
-          <li>$a / $b divisão | 	Quociente de $a e $b.</li>
-          <li>$a % $b módulo | 	Resto de $a dividido por $b | Mesmo sinal de $a</li>
+          <li>$a / $b divisão | Quociente de $a e $b.</li>
+          <li>$a % $b módulo | Resto de $a dividido por $b | Mesmo sinal de $a</li>
         </ul>
       </section>
       <section>
@@ -644,7 +644,7 @@
           Da versão 7 e anteriores ele aceita somar duas strings não numéricas,
           ele assume valor 0 para qualquer string não numérica e soma.
 
-          <pre>
+        <pre>
             <code class="language-php">
               // Versão 7 e anteriores  
               $result = "101 dálmatas" + "10 dólares";
@@ -671,10 +671,10 @@
             var_dump($result);
           </code>
       </pre>
-      <p>Resultado:</p>
+        <p>Resultado:</p>
 
-      <p class="code-result">
-        <?php
+        <p class="code-result">
+          <?php
           $result = "2" + "2";
           echo "Usando + <br>";
           var_dump($result);
@@ -686,7 +686,7 @@
           $result = "2" . "2";
           var_dump($result);
         ?>
-      </p>
+        </p>
       </section>
 
       <section>
@@ -767,7 +767,7 @@
                   <a href="#">Operadores bit a bit (bitwise)</a>
                 </td>
                 <td>
-                  &, |, ^, ~, <<, >>
+                  &, |, ^, ~, <<,>>
                 </td>
                 <td>
                   Realizam operações em nível de bits em valores numéricos.
@@ -778,7 +778,7 @@
                   <a href="#">Operadores de Comparação</a>
                 </td>
                 <td>
-                  ==, !=, ===, !==, <, >, <=, >=, <=>, ??, ?:
+                  ==, !=, ===, !==, <,>, <=,>=, <=>, ??, ?:
                 </td>
                 <td>
                   Compararam valores e retornam verdadeiro ou falso.
@@ -847,7 +847,8 @@
                   +,
                 </td>
                 <td>
-                  Realizam operações em arrays, como mesclagem de arrays e verificação da existência de valores em um array.
+                  Realizam operações em arrays, como mesclagem de arrays e verificação da existência de valores em um
+                  array.
                 </td>
               </tr>
               <tr>
@@ -855,7 +856,8 @@
                   <a href="#">Operadores de tipo</a>
                 </td>
                 <td>
-                  instanceof, is_array(), is_bool(), is_callable(), is_float(), is_int(), is_null(), is_numeric(), is_object(), is_resource(), is_scalar(), is_string(), isset(), empty()
+                  instanceof, is_array(), is_bool(), is_callable(), is_float(), is_int(), is_null(), is_numeric(),
+                  is_object(), is_resource(), is_scalar(), is_string(), isset(), empty()
                 </td>
                 <td>
                   Verificam o tipo ou a existência de variáveis ou valores em variáveis.
@@ -869,8 +871,8 @@
       <section>
         <h3>Tabela de precedência dos operadores</h3>
         <p>
-          A tabela seguinte mostra a precedência dos operadores, 
-          com a maior precedência no começo. Operadores com a mesma 
+          A tabela seguinte mostra a precedência dos operadores,
+          com a maior precedência no começo. Operadores com a mesma
           precedência estão na mesma linha, nesses casos a associatividade
           deles decidirá qual ordem eles serão avaliados.
         </p>
@@ -982,7 +984,7 @@
               </tr>
               <tr>
                 <td>direita</td>
-                <td>= += -= *= **= /= .= %= &= |= ^= <<= >>=</td>
+                <td>= += -= *= **= /= .= %= &= |= ^= <<=>>=</td>
                 <td>atribuição</td>
               </tr>
               <tr>
@@ -1019,7 +1021,7 @@
         </pre>
         <p>Resultado:</p>
         <p class="code-result">
-        <?php
+          <?php
           $valor = 4 * "2.6";
           $valor_convertido = (int) $valor;
           echo "Valor: ";
@@ -1123,7 +1125,7 @@
           .
         </p>
         <p>
-          <pre>
+        <pre>
             <code class="language-php">
               $condicao0 = "a";
               $condicao1 = "b";
@@ -1401,7 +1403,7 @@
             </tr>
           </thead>
           <tbody>
-          <?php
+            <?php
               foreach ($_SERVER as $key => $val) {
                 echo "<tr><td>$key</td><td>$val</td></tr>";
               }
@@ -1443,26 +1445,26 @@
       <section>
         <h3>$_POST</h3>
         <p>
-        De novo, o POST NÃO é mais "SEGURO" do que GET.
-        <br><br>
-        Quanto à segurança, eles são inerentemente iguais. Embora seja verdade
-        que o POST não expõe informações via URL, ele expõe tantas informações
-        quanto um GET na comunicação de rede real entre o cliente e o servidor.
-        Se você precisar passar informações confidenciais, sua primeira linha de
-        defesa seria passá-las usando HTTP Seguro.
-        <br><br>
-        As postagens GET ou string de consulta são realmente boas para as
-        informações necessárias para marcar um item em particular ou para
-        ajudar na otimização do mecanismo de pesquisa e na indexação de itens.
-        <br><br>
-        O POST é adequado para formulários padrão usados ​​para enviar dados únicos.
-        Eu não usaria GET para postar formulários reais, a menos que talvez
-        em um formulário de pesquisa em que você queira permitir que o usuário
-        salve a consulta em um marcador ou algo nesse sentido.
-      </p>
-      <a href="https://www.alura.com.br/artigos/diferencas-entre-get-e-post">
-        Básico sobre GET E POST
-      </a>
+          De novo, o POST NÃO é mais "SEGURO" do que GET.
+          <br><br>
+          Quanto à segurança, eles são inerentemente iguais. Embora seja verdade
+          que o POST não expõe informações via URL, ele expõe tantas informações
+          quanto um GET na comunicação de rede real entre o cliente e o servidor.
+          Se você precisar passar informações confidenciais, sua primeira linha de
+          defesa seria passá-las usando HTTP Seguro.
+          <br><br>
+          As postagens GET ou string de consulta são realmente boas para as
+          informações necessárias para marcar um item em particular ou para
+          ajudar na otimização do mecanismo de pesquisa e na indexação de itens.
+          <br><br>
+          O POST é adequado para formulários padrão usados ​​para enviar dados únicos.
+          Eu não usaria GET para postar formulários reais, a menos que talvez
+          em um formulário de pesquisa em que você queira permitir que o usuário
+          salve a consulta em um marcador ou algo nesse sentido.
+        </p>
+        <a href="https://www.alura.com.br/artigos/diferencas-entre-get-e-post">
+          Básico sobre GET E POST
+        </a>
         <pre>
           <code class="language-php">
             // Post dá pra passar por formulário
@@ -1480,6 +1482,116 @@
     <article>
       <h1>Atividade 000</h1>
       <a href="ativ-000/form.php">Formulário</a>
+    </article>
+
+    <article>
+      <h2>Manipulação de data</h2>
+      <section>
+        <h3>Função date()</h3>
+        <p>
+          A função date() é função para data e hora. <br>
+          Acesse a <a target="_blank" href="https://www.php.net/manual/en/function.date.php">documentação</a> do date();
+          Atenção: O date mostra a hora do servidor e não do computador.<br>
+          O formato padrão do servidor de timezone é CET, observe o comando que muda a timezone.<br>
+        </p>
+        <p>Além disso qualquer valor pode ser passado para formatar a data ("d/M/Y", "d-M-Y" etc). Exemplo:</p>
+        <pre>
+          <code class="language-php">
+            echo "A data de hoje é " . date("d/M/Y") . "&lt;br&gt;";
+            echo "Dia: " . date("d") . "&lt;br&gt;";
+            echo "Mês: " . date("M") . "&lt;br&gt;";
+            echo "Ano: " . date("Y") . "&lt;br&gt;";
+            echo "Hora: " . date("G") . "&lt;br&gt;";
+            echo "Minuto: " . date("i") . "&lt;br&gt;";
+            echo "Segundo: " . date("s") . "&lt;br&gt;";
+            echo "Timezone: " . date("T") . "&lt;br&gt;";
+            echo "Configurando zona para utc: &lt;br&gt;&lt;br&gt;";
+            date_default_timezone_set("America/Sao_Paulo");
+            echo "Hora: " . date("G") . "&lt;br&gt;";
+            echo "Minuto: " . date("i") . "&lt;br&gt;";
+            echo "Segundo: " . date("s") . "&lt;br&gt;";
+            echo "Timezone: " . date("T") . "&lt;br&gt;";
+          </code>
+        </pre>
+        <p>Resultado:
+        <p>
+        <p class="code-result">
+          <?php
+            echo "A data de hoje é " . date("d/M/Y") . "<br>";
+            echo "Dia: " . date("d") . "<br>";
+            echo "Mês: " . date("M") . "<br>";
+            echo "Ano: " . date("Y") . "<br>";
+            echo "Hora: " . date("G") . "<br>";
+            echo "Minuto: " . date("i") . "<br>";
+            echo "Segundo: " . date("s") . "<br>";
+            echo "Timezone: " . date("T") . "<br><br>";
+            echo "Configurando zona para utc: <br>";
+            date_default_timezone_set("America/Sao_Paulo");
+            echo "Hora: " . date("G") . "<br>";
+            echo "Minuto: " . date("i") . "<br>";
+            echo "Segundo: " . date("s") . "<br>";
+            echo "Timezone: " . date("T") . "<br>";
+          ?>
+        </p>
+      </section>
+      <section>
+        <h3>Cálculos com data</h3>
+        <pre>
+          <code class="language-php">
+            $hoje = date('Y-m-d');
+            $vencimento = (date("Y") + 1)."-".date("m")."-".date("d");
+            $diferença = strtotime($vencimento) - strtotime($hoje);
+            $dias = floor($diferença / (60*60*24));
+
+            echo "Hoje: $hoje&lt;br&gt;";
+            echo "Vencimento: $vencimento&lt;br&gt;";
+            echo "A difença é de $dias dias entre as datas.&lt;br&gt;";
+
+            $dataHojeExplodida = explode('-', $hoje);
+            echo "Apenas dia da data explodida: $dataHojeExplodida[2]&lt;br&gt;";
+          </code>
+        </pre>
+        <p>Resultado:</p>
+        <p class="code-result">
+          <?php
+            $hoje = date('Y-m-d');
+            $vencimento = (date("Y") + 1)."-".date("m")."-".date("d");
+            $diferença = strtotime($vencimento) - strtotime($hoje);
+            $dias = floor($diferença / (60*60*24));
+
+            echo "Hoje: $hoje<br>";
+            echo "Vencimento: $vencimento<br>";
+            echo "A difença é de $dias dias entre as datas.<br>";
+
+            $dataHojeExplodida = explode('-', $hoje);
+            echo "Apenas dia da data explodida: $dataHojeExplodida[2]<br>";
+          ?>
+        </p>
+      </section>
+    </article>
+
+    <article>
+      <h2>Include & Require</h2>
+      <pre>
+        <code class="language-php">
+          include('teste.php');
+          require('teste.php');
+        </code>
+      </pre>
+      <p>
+        Include e require é apenas uma forma de importar um arquivo php dentro
+        da nossa aplicação.
+        <br><br>
+        include não gera erros e deve ser usado para importar código não
+        sensível ao correto funcionamento da página.
+        <br><br>
+        O require é "requerido", ou seja obrigatório e deve ser usado para garantir
+        o carregamento de código dentro da página.
+        <br><br>
+        Existe também as versões include_once e require_once que garantem o carregamento
+        de apenas uma versão do código a ser importado. Porém essas impactam
+        na performance da aplicação e devem ser utilizadas com sabedoria.
+      </p>
     </article>
   </main>
   <script src="../src/util/prism/scriptprism.js"></script>
