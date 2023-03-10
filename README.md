@@ -79,8 +79,14 @@ formulário de cadastro de login completo com validação completa e com cadastr
 ### C.R.U.D
 Formulário de clientes - CRUD completo com validação completa de nome, email e cadastro no banco de dados MySQL.
 
+#### Create
 ![](./src/img/crud1.png)
+
+#### Read and Update
+
 ![](./src/img/crud2.png)
+
+#### Read and Delete
 ![](./src/img/crud3.png)
 
 ### Form simples
