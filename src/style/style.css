@@ -34,3 +34,11 @@ input.red-border {
 .error-message {
   color: red;
 }
+
+span.success-message {
+  color: green;
+}
+
+.hidden {
+  display: none;
+}
