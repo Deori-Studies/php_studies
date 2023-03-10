@@ -1783,6 +1783,189 @@
         ?>
       </p>
     </article>
+
+    <article>
+      <h2>Cookies</h2>
+      Cookies são pequenos arquivos incorporados pelo servidor no computador
+      do usuário. Servem para trocar dados entre o navegador do usuário e
+      o servidor da página que o criou.
+      <br><br>
+      Cookies tem prazo de validade. Ele ficará disponível pelo tempo que
+      o desenvolvedor do site definir. Portanto, se o cookie estiver válido,
+      ele poderá ser acessado em seu código mesmo que o cliente feche o
+      navegador ou desligue o computador.
+      <br><br>
+      Cookies são públicos, então não se deve salvar informações sensíveis neles.
+      <pre>
+        <code class="language-php">
+          // Atenção na LGPD com cookies.
+          setcookie("chave", "valor", time()+(86400 * 30)); // 30 dias
+          if (isset($_COOKIE['chave'])) {
+            echo "O nome é $_COOKIE['chave']";
+          } else {
+            echo "NO COOKIESSSS";
+          }
+          setcookie("chave", "outro valor", time()+(86400 * 2));
+          setcookie("chave", "outro valor", -3600); // Assim expirou a uma hora
+
+          if(count($_COOKIE) &gt; 0) {
+            echo "Tem cookies!";
+          } else {
+            echo "Não tem cookies!";
+          }
+        </code>
+      </pre>
+    </article>
+
+    <article>
+      <h2>Sessions</h2>
+      <p>Sessão são boas pra login por exemplo.</p>
+      <pre>
+        <code class="language-php">
+          session_start();
+          $_SESSION["chave"] = "Valor"; // Atribuir valor a sessão.
+          session_unset(); // Apagar valores de sessão
+          $_SESSION = array(); // ou [] mesmo de cima;
+          session_destroy(); // Destruir sessão. Ou desligar.
+        </code>
+      </pre>
+    </article>
+
+    <article>
+      <h2>JSON</h2>
+      <pre>
+        <code class="language-php">
+          $texto = {
+            "nome": "Gabriel",
+            "aaa": "bbb"
+          }
+
+          $dados = json_decode($texto);
+          echo $dados-&gt;nome;
+          $dados = json_decode($texto, true); // Matriz associativa
+          echo $dados['nome'];
+          $dados['professor'] = "dimitri";
+          $texto = json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+          // JSON_PRETTY_PRINT serve pra organizar mais bonito o texto
+          // JSON_UNESCAPED_UNICODE serve para acentuação e caracteres especiais
+          // Funciona de qualquer jeito, mas fica melhor pra ler.
+        </code>
+      </pre>
+    </article>
+
+    <article>
+      <h2>AJAX</h2>
+      <pre>
+        <code class="language-js">
+
+          function enviaParaPHP() {
+            const json = JSON_STRINGFY(dados);
+            $.ajax({
+              url: 'index.php',
+              data: {texto: json},
+              type: "POST",
+              success: function(retorno) {
+                console.log(retorno);
+                let objeto = JSON.parse(retorno);
+                console.log(objeto);
+              },
+              error: function (erro) {
+                alert(erro);
+              }
+            })
+          }
+
+          $.getJSON('Link', function(dados) {
+            console.log(dados);
+            enviaParaPHP(dados);
+          })
+          $.ajax({
+            url: 'index.php',
+            data: json,
+            success: function (retorno) {
+              console.log(retorno);
+            },
+            error: function (retorno) {
+              alert(erro);
+            }
+          })
+        </code>
+      </pre>
+      <pre>
+        <code class="language-php">
+          $texto = $_POST["texto"]; 
+          $dados = json_decode($texto, true)
+          // etc
+        </code>
+      </pre>
+    </article>
+
+    <article>
+      <h2>cURL</h2>
+      <p>Sim, me parece similar ao cURL do Unix</p>
+      <p>
+        Permite a conexão e comunicação com diferentes servidores, usando
+        diferentes protocolos como https, ftp, gopher, telnet, dict, file,
+        ldap. libcurl também suporta certificados HTTPS, HTTP POST, HTTP PUT,
+        upload via FTP e mais.
+        <br><br>
+        Vale ver o <a href="https://www.php.net/manual/pt_BR/book.curl.php">Manual do cURL</a>
+      </p>
+      <pre>
+        <code class="language-php">
+          // Exemplo GET
+          // Sempre inicializar
+          $ch = curl_init();
+
+          // Apontar a URL
+          curl_setopt($ch, CURLOPT_URL, "LINK");
+
+          // Ativar retorno como string do servidor
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+          // Executar o curl_close
+          $retorno = curl_exec($ch);
+
+          // Fechar o cURL
+          curl_close($ch);
+
+          // Mostrar restore_exception_handler
+          echo "&lt;pre&gt;$retorno&lt;pre&gt;"
+
+          $dados = json_decode($retorno, true);
+          echo $dados["chave"];
+
+
+          // Exemplo POST
+          // Sempre inicializar
+          $ch = curl_init();
+
+          // Apontar a URL
+          curl_setopt($ch, CURLOPT_URL, "LINK");
+
+          // Ativar retorno como string do servidor
+          curl_setopt($ch, CURLOPT_POST, 1); // Padrão é GET
+
+          //Os campos que queremos mandar via post
+          curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array('valor1' =&gt; 'DIMITRI', 'valor2' =&gt; 'BLABLA')));
+
+          // Ativar retorno como string do servidor
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+          // Executar o curl_close
+          $retorno = curl_exec($ch);
+
+          // Fechar o cURL
+          curl_close($ch);
+
+          // Mostrar restore_exception_handler
+          echo "&lt;pre&gt;$retorno&lt;pre&gt;"
+
+          $dados = json_decode($retorno, true);
+          echo $dados["chave"];
+        </code>
+      </pre>
+    </article>
   </main>
   <script src="../src/util/prism/scriptprism.js"></script>
 </body>
