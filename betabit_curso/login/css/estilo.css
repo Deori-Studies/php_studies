@@ -4,6 +4,7 @@
   --lightblue-1: #00c3ff;
   --lightblue-2: #038bb4;
   --alert-1: #c82a2a;
+  --success-1: #2ac874;
 }
 
 body {
@@ -147,4 +148,19 @@ label {
 
 .erro-input {
   border: 1px solid var(--alert-1);
+}
+
+.sucesso {
+  background-color: var(--success-1);
+  font-weight: bold;
+  color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.oculto {
+  display: hidden;
 }
