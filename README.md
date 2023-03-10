@@ -3,9 +3,7 @@ Repositório para armazenar meu desenvolvimento no aprendizado de PHP.
 
 ## Link do deploy
 https://deori-php-studies.vercel.app/
-
-Conteúdo:
-![](./src/img/preview.jpg)
+###### Ainda não atualizado pois demanda configurações a parte
 
 Conteúdo Oficial Estudado:
  - [x] Curso PHP Completo Aula 01 - Introdução ao PHP
@@ -58,3 +56,24 @@ Conteúdo Oficial Estudado:
  - [ ] Curso PHP Completo Aula 48 - Namespaces e melhor organização
  - [ ] Curso PHP Completo Aula 49 - Sistema Login POO (Parte 1)
  - [ ] Curso PHP Completo Aula 50 - Sistema Login POO (Parte 2)
+
+## Cases e Conteúdo feito
+### Cadastro
+![](./src/img/cadastro.png)
+
+### Login
+![](./src/img/login.png)
+
+### C.R.U.D
+![](./src/img/crud1.png)
+![](./src/img/crud2.png)
+![](./src/img/crud3.png)
+
+### Form simples
+![](./src/img/Form-simples.png)
+
+### Conteudo BetaBit - Documentação de aprendizado em PHP
+![](./src/img/conteudobetabit.png)
+
+### Conteúdo Curso em vídeo - Documentação em PHP
+![](./src/img/documentacaoatividadephp.png)
