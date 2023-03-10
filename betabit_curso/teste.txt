@@ -1,0 +1,3 @@
+Uma linha injetada pelo PHP 0
+Uma linha injetada pelo PHP 1
+Uma linha injetada pelo PHP 2

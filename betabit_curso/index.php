@@ -1593,6 +1593,196 @@
         na performance da aplicação e devem ser utilizadas com sabedoria.
       </p>
     </article>
+
+    <article>
+      <h2>Permissão de usuários (chmod)</h2>
+      <p>O comando chmod para manipular permissões no php é similar ao do Unix</p>
+      <pre>
+        <code class="language-php">
+          chmod ("/arquivo/diretorio", 755);   // decimal; provavelmente incorreto
+          chmod ("/arquivo/diretorio", "u+rwx,go+rx"); // string; incorreto
+          chmod ("/arquivo/diretorio", 0755);  // octal; representação correta do modo
+        </code>
+      </pre>
+      <h3>Tabela de referência</h3>
+      <div class="overflow-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Permission Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>400</td>
+              <td>Owner Read</td>
+            </tr>
+            <tr>
+              <td>200</td>
+              <td>Owner Write</td>
+            </tr>
+            <tr>
+              <td>100</td>
+              <td>Owner Execute</td>
+            </tr>
+            <tr>
+              <td>40</td>
+              <td>Group Read</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>Group Write</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Group Execute</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Global Read</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Global Write</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Global Execute</td>
+            </tr>
+            <tr>
+              <td>600</td>
+              <td>Escrita e leitura para o proprietario, nada ninguem mais</td>
+            </tr>
+            <tr>
+              <td>644</td>
+              <td>Escrita e leitura para o proprietario, leitura para todos os outros</td>
+            </tr>
+            <tr>
+              <td>755</td>
+              <td>Tudo para o proprietario, leitura e execucao para os outros</td>
+            </tr>
+            <tr>
+              <td>750</td>
+              <td>Tudo para o proprietario, leitura e execucao para o grupo do prop</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article>
+      <h2>Manipulação de diretórios</h2>
+      <pre>
+        <code class="language-php">
+          $pasta = "nova-pasta";
+          
+          if (!is_dir($pasta)) {
+            mkdir($pasta, 0755, true); // RXW proprietário e RX para outros.
+            // true para modo recursivo de criação de pasta
+            echo "Pasta de nome $pasta criada";
+          } else {
+            rename($pasta, 'teste'); // Renomeia e move a pasta
+            echo "Pasta de nome $pasta renomeada";
+            //afinal usa o método mv (move)
+            rmdir($pasta);
+            echo "Pasta de nome $pasta excluída";
+          }
+        </code>
+      </pre>
+    </article>
+
+    <article>
+      <h2>Manipulação de arquivos</h2>
+      <a href="https://www.php.net/manual/pt_BR/ref.filesystem.php">Manual sistema de arquivos</a>
+      <pre>
+        <code class="language-php">
+          // fopen(); fwrite(); fclose(); feof(); fgets();
+          // file_put_contents(); file_get_contents();
+          // unlink(); copy();
+          $pasta = "arquivos/";
+          if (!is_dir($pasta)) {
+            mkdir(($pasta), 0755);
+          }
+          $nome_arquivo = date('y-m-d-H-i-s').".txt";
+          $caminho_arquivo = $pasta.$nome_arquivo;
+          $arquivo = fopen($caminho_arquivo, "a+");
+          fwrite($arquivo, 'Uma linha injetada pelo PHP 0' .PHP_EOL);
+          // PHP_EOL é o caractere final para pular linha.
+          fwrite($arquivo, 'Uma linha injetada pelo PHP 1' .PHP_EOL);
+          fwrite($arquivo, 'Uma linha injetada pelo PHP 2' .PHP_EOL);
+          fclose($arquivo);
+          if (file_exists($caminho_arquivo) && is_file($caminho_arquivo)) {
+            echo file_get_contents($caminho_arquivo); // Pega todo conteúdo direto
+            $abrirArquivo = fopen($caminho_arquivo, 'r');
+            while(!feof($abrirArquivo)) {
+              echo fgets($abrirArquivo) . "<br>";
+            }
+            fclose($abrirArquivo);
+          }
+
+          copy($caminho_arquivo, 'teste.txt');
+
+          if (is_dir($pasta)) {
+            $dirArrayInfo = scandir($pasta);
+            print_r($dirArrayInfo); // Printando array. escaneando conteúdo diretório
+            foreach($dirArrayInfo as $arquivo) {
+              $caminhocompleto = $pasta.$arquivo;
+              if (is_file($caminhocompleto)) {
+                unlink($caminhocompleto);
+              }
+            }
+            rmdir($pasta);
+            $arquivo = "teste.html";
+            file_put_contents($arquivo, '&lt;h1&gt;OLA&lt;/h1&gt;');
+          }
+        </code>
+      </pre>
+      <p>Resultado:</p>
+      <p class="code-result">
+        <?php
+          // fopen(); fwrite(); fclose(); feof(); fgets();
+          // file_put_contents(); file_get_contents();
+          // unlink(); copy();
+          $pasta = "arquivos/";
+          if (!is_dir($pasta)) {
+            mkdir(($pasta), 0755);
+          }
+          $nome_arquivo = date('y-m-d-H-i-s').".txt";
+          $caminho_arquivo = $pasta.$nome_arquivo;
+          $arquivo = fopen($caminho_arquivo, "a+");
+          fwrite($arquivo, 'Uma linha injetada pelo PHP 0' .PHP_EOL);
+          // PHP_EOL é o caractere final para pular linha.
+          fwrite($arquivo, 'Uma linha injetada pelo PHP 1' .PHP_EOL);
+          fwrite($arquivo, 'Uma linha injetada pelo PHP 2' .PHP_EOL);
+          fclose($arquivo);
+          if (file_exists($caminho_arquivo) && is_file($caminho_arquivo)) {
+            echo file_get_contents($caminho_arquivo); // Pega todo conteúdo direto
+            $abrirArquivo = fopen($caminho_arquivo, 'r');
+            while(!feof($abrirArquivo)) {
+              echo fgets($abrirArquivo) . "<br>";
+            }
+            fclose($abrirArquivo);
+          }
+
+          copy($caminho_arquivo, 'teste.txt');
+
+          if (is_dir($pasta)) {
+            $dirArrayInfo = scandir($pasta);
+            print_r($dirArrayInfo); // Printando array. escaneando conteúdo diretório
+            foreach($dirArrayInfo as $arquivo) {
+              $caminhocompleto = $pasta.$arquivo;
+              if (is_file($caminhocompleto)) {
+                unlink($caminhocompleto);
+              }
+            }
+            rmdir($pasta);
+            $arquivo = "teste.html";
+            file_put_contents($arquivo, '<h1>OLA</h1>');
+          }
+        ?>
+      </p>
+    </article>
   </main>
   <script src="../src/util/prism/scriptprism.js"></script>
 </body>
