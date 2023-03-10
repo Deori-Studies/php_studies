@@ -21,4 +21,11 @@
   } catch(PDOException $erro) {
     echo "Falha ao se conectar com o banco";
   }
+
+  function limparPost($dados) {
+    $dados = trim($dados);
+    $dados = stripslashes($dados);
+    $dados = htmlspecialchars($dados);
+    return $dados;
+  }
 ?>
