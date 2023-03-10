@@ -64,7 +64,7 @@ Conteúdo Oficial Estudado:
  - [ ] Curso PHP Completo Aula 49 - Sistema Login POO (Parte 1)
  - [ ] Curso PHP Completo Aula 50 - Sistema Login POO (Parte 2)
 
-## Cases e Conteúdo feito
+## Cases e Conteúdo realizado
 ### Cadastro
 formulário de cadastro de login completo com validação completa e com cadastro realizado em banco de dados MySQL.
 
