@@ -40,7 +40,7 @@
       </label>
     </div>
     <button class="btn-blue" type="submit">Cadastrar</button>
-    <a href="index.html">Já tenho uma conta</a>
+    <a href="index.php">Já tenho uma conta</a>
   </form>
 </body>
 </html>
