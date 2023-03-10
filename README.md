@@ -2,10 +2,10 @@
 Repositório para armazenar meu desenvolvimento no aprendizado de PHP.
 
 ## Sumário
-[#](0 - Sumário)
-[#](1 - Link do Deploy)
-[#](2 - Conteúdo)
-[#](3 - Cases realizados)
+- [0 - Sumário](#)
+- [1 - Link do Deploy](#)
+- [2 - Conteúdo](#)
+- [3 - Cases realizados](#)
 
 ## Link do deploy
 https://deori-php-studies.vercel.app/
