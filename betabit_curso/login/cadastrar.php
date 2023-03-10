@@ -82,7 +82,7 @@
       <input
         <?php if(isset($erro_geral) or isset($erro_nome)) { echo "class=\"erro-input\""; }?>
         <?php if(isset($_POST['nome_completo'])) { echo "value=\"".$_POST['nome_completo']."\""; }?>
-        type="text" name="nome_completo" id="nome_completo" placeholder="Digite seu nome Completo"
+        type="text" name="nome_completo" id="nome_completo" placeholder="Digite seu nome Completo" required
       >
       <?php
         if(isset($erro_nome)) {
@@ -95,7 +95,7 @@
       <input
         <?php if(isset($erro_geral) or isset($erro_email)) { echo "class=\"erro-input\""; }?>
         <?php if(isset($_POST['email'])) { echo "value=\"".$_POST['email']."\""; }?>
-        type="email" name="email" id="email" placeholder="Digite seu email"
+        type="email" name="email" id="email" placeholder="Digite seu email" required
       >
       <?php
         if(isset($erro_email)) {
@@ -108,7 +108,7 @@
       <input
         <?php if(isset($erro_geral) or isset($erro_senha)) { echo "class=\"erro-input\""; }?>
         <?php if(isset($_POST['senha'])) { echo "value=\"".$_POST['senha']."\""; }?>
-          type="password" name="senha" id="senha" placeholder="Digite sua senha"
+          type="password" name="senha" id="senha" placeholder="Digite sua senha" required
         >
       <?php
         if(isset($erro_senha)) {
@@ -121,7 +121,7 @@
       <input
         <?php if(isset($erro_geral) or isset($erro_repete_senha)) { echo "class=\"erro-input\""; }?>
         <?php if(isset($_POST['repete_senha'])) { echo "value=\"".$_POST['repete_senha']."\""; }?>
-          type="password" name="repete_senha" id="repete_senha" placeholder="Repita sua senha"
+          type="password" name="repete_senha" id="repete_senha" placeholder="Repita sua senha" required
         >
       <?php
         if(isset($erro_repete_senha)) {
@@ -130,7 +130,7 @@
       ?>
     </div>
     <div <?php if(isset($erro_geral) or isset($erro_checkbox)) { echo "class=\"erro-input\" \"input-check-group\""; } else { echo "class=\"input-check-group\""; } ?> >
-      <input type="checkbox" name="termos" id="termos" value="ok">
+      <input type="checkbox" name="termos" id="termos" value="ok" required>
       <label for="termos">
         Ao se cadastrar você concorda com a nossa
         <a class="link" href="">Política de Privacidade</a>
