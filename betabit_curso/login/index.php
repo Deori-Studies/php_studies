@@ -65,6 +65,7 @@
       <img class="input-icon" src="img/lock.png" alt="">
       <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
     </div>
+    <a href="esqueci.php">Esqueceu a senha?</a>
     <button class="btn-blue" type="submit">Fazer Login</button>
     <a href="cadastrar.php">Ainda não tenho cadastro</a>
   </form>
