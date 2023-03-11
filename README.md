@@ -73,7 +73,7 @@ formulário de cadastro de login completo com validação completa e com cadastr
 ### Login
 ![](./src/img/login.png)
 
- Tela de login, no momento apenas frontend, faltando as validações de email e senha, acesso ao banco de dados para conferência da senha e geração de token usando as técnicas de cookies ou session/local storage.
+ Tela de login, já foram feitas as validações de email e senha, acesso ao banco de dados para conferência da senha e geração de token usando as técnicas de cookies ou session/local storage. Verificação de email, falta apenas tela de recuperar senha.
 
 
 ### C.R.U.D
