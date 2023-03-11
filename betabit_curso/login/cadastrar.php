@@ -42,12 +42,18 @@
         if(!$usuario) {
           $recupera_senha="";
           $token="";
+          $codigo_confirmacao = uniqid();
           $status = "novo";
           $data_cadastro = date("d/m/Y");
 
-          $sql = $pdo->prepare("INSERT INTO usuarios VALUES (null, ?, ?, ?, ?, ?, ?, ?)");
-          if($sql->execute(array($nome, $email, $senha_cript, $recupera_senha, $token, $status, $data_cadastro))) {
-            header('location: index.php?result=ok');
+          $sql = $pdo->prepare("INSERT INTO usuarios VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?)");
+          if($sql->execute(array($nome, $email, $senha_cript, $recupera_senha, $token, $codigo_confirmacao, $status, $data_cadastro))) {
+            if ($modo == "local") {
+              header('location: index.php?result=ok');
+            } else if ($modo == "producao") {
+              
+              header('location: index.php?result=ok');
+            }
           }
         } else {
           $erro_geral = "Usuário já cadastrado";
