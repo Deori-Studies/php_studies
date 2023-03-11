@@ -14,6 +14,8 @@
         $_SESSION['TOKEN'] = $token;
         header('location: index.php?result=ok');
       } 
+    } else {
+      echo "<h1>Código de confirmação inválido!</h1>";
     }
   }
 ?>
