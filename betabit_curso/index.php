@@ -2464,7 +2464,7 @@
             $umAnimal->comer();
           </code>
         </pre>
-        <p>
+        <p class="code-result">
           <?php
             trait Comer {
               function comer() {
@@ -2498,6 +2498,143 @@
       <p>Classes fornecem um modelo pra classes filho ter determinadas funções e/ou propriedades públicos ou protegidos</p>
       <p>Interfaces fornecem uma "fôrma", a uma ou várias classes e sempre tem métodos públicos (usa implements)</p>
       <p>Traits são trechos de código usados em diversas classes, mesmo que essas não tenham relação, sem a necessidade de extender classes que não fazem sentido estarem juntas</p>
+    </article>
+
+    <article>
+      <h2>Métodos e propriedades estáticas</h2>
+      <p>São métodos e propriedades que podem ser acessadas sem serem instanciadas.</p>
+      <p>Funciona apenas com métodos e propriedades públicas.</p>
+      <pre>
+        <code class="language-php">
+          class Teste {
+            static $indice = 0;
+            public $id;
+
+            function novo() {
+              $this->id = self::$indice; // Coloca o índice atual na nova instância
+              self::$indice++; // Soma 1 ao índice
+            }
+
+            public static function ola() {
+              echo "Olá mundo estático!&lt;br&gt;";
+            }
+            function teste() {
+              self::ola(); // $this se refere a classe instanciada, self se refere a classe.
+            }
+          }
+
+          class TesteFilho extends Teste{
+            function __construct() {
+              parent::ola();
+            }
+
+            function pega() {
+              echo "&lt;br&gt;" . parent::$indice . "&lt;br&gt;";
+            }
+          }
+
+          class Aleatoria {
+            function qualquer() {
+              Teste::ola();
+            }
+          }
+
+          Teste::ola();
+          $teste = new Teste();
+          $teste->teste();
+
+          $testeFilho = new TesteFilho();
+
+          $aleatoria = new Aleatoria();
+          $aleatoria->qualquer();
+
+          echo "Teste ids: &lt;br&gt;";
+          echo "A estática atual:&lt;br&gt;";
+          echo Teste::$indice;
+          echo "&lt;br&gt;Ids adicionados:&lt;br&gt;";
+          $teste1 = new Teste();
+          $teste1->novo();
+          echo $teste1->id;
+          echo "&lt;br&gt;";
+          $teste2 = new Teste();
+          $teste2->novo();
+          echo $teste2->id;
+          echo "&lt;br&gt;";
+          $teste3 = new Teste();
+          $teste3->novo();
+          echo $teste3->id;
+          echo "&lt;br&gt;";
+          echo "A estática atual:&lt;br&gt;";
+          echo Teste::$indice;
+          echo "&lt;br&gt;";
+        </code>
+      </pre>
+      <p class="code-result">
+        <?php
+          class Teste {
+            static $indice = 0;
+            public $id;
+
+            function novo() {
+              $this->id = self::$indice; // Coloca o índice atual na nova instância
+              self::$indice++; // Soma 1 ao índice
+            }
+
+            public static function ola() {
+              echo "Olá mundo estático!<br>";
+            }
+            function teste() {
+              self::ola(); // $this se refere a classe instanciada, self se refere a classe.
+            }
+          }
+
+          class TesteFilho extends Teste{
+            function __construct() {
+              parent::ola();
+            }
+
+            function pega() {
+              echo "<br>" . parent::$indice . "<br>";
+            }
+          }
+
+          class Aleatoria {
+            function qualquer() {
+              Teste::ola();
+            }
+          }
+
+          Teste::ola();
+          $teste = new Teste();
+          $teste->teste();
+
+          $testeFilho = new TesteFilho();
+
+          $aleatoria = new Aleatoria();
+          $aleatoria->qualquer();
+
+          echo "Teste ids: <br>";
+          echo "A estática atual:<br>";
+          echo Teste::$indice;
+          echo "<br>Ids adicionados:<br>";
+          $teste1 = new Teste();
+          $teste1->novo();
+          echo $teste1->id;
+          echo "<br>";
+          $teste2 = new Teste();
+          $teste2->novo();
+          echo $teste2->id;
+          echo "<br>";
+          $teste3 = new Teste();
+          $teste3->novo();
+          echo $teste3->id;
+          echo "<br>";
+          echo "A estática atual:<br>";
+          echo Teste::$indice;
+          echo "<br>";
+        ?>
+      </p>
+
     </article>
   </main>
   <script src="../src/util/prism/scriptprism.js"></script>
