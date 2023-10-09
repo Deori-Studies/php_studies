@@ -52,17 +52,17 @@ Conteúdo Oficial Estudado:
  - [x] Curso PHP Completo Aula 37 - Exportar e Importar Banco MySQL
  - [x] Curso PHP Completo Aula 38 - Sistema de Login (Parte 1)
  - [x] Curso PHP Completo Aula 39 - Sistema de Login (Parte 2)
- - [ ] Curso PHP Completo Aula 40 - Sistema de Login (Parte 3)
- - [ ] Curso PHP Completo Aula 41 - Introdução a PHP Orientado a Objetos
- - [ ] Curso PHP Completo Aula 42 - Construct, Destruct e Visibilidade de Propriedades
- - [ ] Curso PHP Completo Aula 43 - Herança e Visibilidade de Métodos
- - [ ] Curso PHP Completo Aula 44 - Constantes e Autoloading de Classes
- - [ ] Curso PHP Completo Aula 45 - Classes e Métodos Abstratos
- - [ ] Curso PHP Completo Aula 46 - Interfaces e Traits
- - [ ] Curso PHP Completo Aula 47 - Métodos e Propriedades Estáticas
- - [ ] Curso PHP Completo Aula 48 - Namespaces e melhor organização
- - [ ] Curso PHP Completo Aula 49 - Sistema Login POO (Parte 1)
- - [ ] Curso PHP Completo Aula 50 - Sistema Login POO (Parte 2)
+ - [x] Curso PHP Completo Aula 40 - Sistema de Login (Parte 3)
+ - [x] Curso PHP Completo Aula 41 - Introdução a PHP Orientado a Objetos
+ - [x] Curso PHP Completo Aula 42 - Construct, Destruct e Visibilidade de Propriedades
+ - [x] Curso PHP Completo Aula 43 - Herança e Visibilidade de Métodos
+ - [x] Curso PHP Completo Aula 44 - Constantes e Autoloading de Classes
+ - [x] Curso PHP Completo Aula 45 - Classes e Métodos Abstratos
+ - [x] Curso PHP Completo Aula 46 - Interfaces e Traits
+ - [x] Curso PHP Completo Aula 47 - Métodos e Propriedades Estáticas
+ - [x] Curso PHP Completo Aula 48 - Namespaces e melhor organização
+ - [x] Curso PHP Completo Aula 49 - Sistema Login POO (Parte 1)
+ - [x] Curso PHP Completo Aula 50 - Sistema Login POO (Parte 2)
 
 ## Cases e Conteúdo realizado
 ### Cadastro
