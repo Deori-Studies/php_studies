@@ -1966,6 +1966,676 @@
         </code>
       </pre>
     </article>
+
+    <article>
+      <h2>Introdução a POO</h2>
+      <p>
+        A Programação Orientada a Objetos (POO) é uma técnica de programação que permite estruturar o código de uma aplicação em torno de objetos, que são instâncias de classes que contêm propriedades e métodos. O PHP é uma linguagem de programação que oferece suporte completo à POO, permitindo que os desenvolvedores criem aplicações robustas, escaláveis e fáceis de manter. Com a POO, é possível reutilizar código, melhorar a legibilidade do código, simplificar a manutenção, aumentar a segurança e melhorar o desempenho. Neste contexto, o PHP oferece recursos como encapsulamento, herança, polimorfismo e interfaces para implementar POO de maneira eficiente.
+      </p>
+      <pre>
+        <code class="language-php">
+        class objcarro {
+            public $modelo;
+            public $cor;
+            function set_modelo($modelo) {
+              $this->modelo = $modelo;
+            }
+        
+            function get_modelo() {
+              return $this->modelo;
+            }
+          }
+          $carro1 = new objcarro();
+          var_dump($carro1);
+
+          $carro1->set_modelo("Uno");
+
+          $carro2 = new objcarro();
+          $carro2->set_modelo("Gol");
+          var_dump($carro2);
+  
+          echo "&lt;br&gt;O carro 1 é " . $carro1->get_modelo();
+          echo "&lt;br&gt;O carro 2 é " . $carro2->get_modelo();
+        </code>
+      </pre>
+      <p class="code-result">
+        <?php
+          class objcarro {
+            public $modelo;
+            public $cor;
+            function set_modelo($modelo) {
+              $this->modelo = $modelo;
+            }
+        
+            function get_modelo() {
+              return $this->modelo;
+            }
+          }
+          $carro1 = new objcarro();
+          var_dump($carro1);
+
+          $carro1->set_modelo("Uno");
+
+          $carro2 = new objcarro();
+          $carro2->set_modelo("Gol");
+          var_dump($carro2);
+  
+          echo "<br>O carro 1 é " . $carro1->get_modelo();
+          echo "<br>O carro 2 é " . $carro2->get_modelo();
+        ?>
+      </p>
+    </article>
+    <article>
+      <h2>Construct, destruct e Visibilidade</h2>
+      <p>Resumo sobre construct:<br>
+        O método construct é executado automaticamente ao criar um objeto em PHP, e tem a função de inicializar as propriedades.
+        <br><br>
+        Resumo sobre destruct:<br>
+        O método destruct é executado automaticamente quando um objeto é destruído em PHP, e libera recursos alocados durante a execução.
+        <br><br>
+        Variáveis public podem ser acessadas a partir de qualquer lugar no código, incluindo outras classes que instanciam o objeto.
+        <br><br>
+        Variáveis protected só podem ser acessadas dentro da própria classe ou por classes que herdam da classe pai.
+        <br><br>
+        Variáveis private só podem ser acessadas dentro da própria classe, sendo impossível acessá-las por classes que herdam da classe pai ou a partir do objeto instanciado.
+        <br>
+      </p>
+      <pre>
+        <code class="language-php">
+          class carrinho {
+            public $modelo;
+            public $cor;
+            protected $ano; // Não funciona pro usuário final
+            private $chassi; // Não funciona pra filhos ou usuário final
+
+            function __construct(string $modelo = null, string $cor = null, string $chassi = "ABCBLABLABLA123") {
+              // Aciona uma ação no início do processo de instanciamento.
+              $this->modelo = $modelo;
+              $this->cor = $cor;
+              $this->chassi = $chassi;
+              echo "Objeto criado com sucesso";
+            }
+
+            function __destruct() {
+              // Aciona uma ação ao final do processo de instanciamento.
+              // Acionado se o objeto for eliminado
+              echo "Final do instanciamento";
+            }
+
+            function set_modelo($modelo) {
+              $this->modelo = $modelo;
+            }
+        
+            function get_modelo() {
+              return $this->modelo;
+            }
+
+            function transforma_chassi() {
+              $this->chassi = "NOVO_VALOR";
+            }
+          }
+          $novoCarro = new carrinho("Uno", "Bordô");
+          var_dump($novoCarro);
+          $novoVazio = new carrinho();
+          var_dump($novoVazio);
+
+          // Novo método de declarar apenas 8 pra cima
+          class carroNovaForma {
+            function __construct (public string $modelo = "Indefinido", public string $cor = "Nenhuma") {
+            }
+          }
+          ?>
+        </code>
+      </pre>
+      <p class="code-result">
+        <?php
+        class carrinho {
+          public $modelo;
+          public $cor;
+          protected $ano; // Não funciona pro usuário final
+          private $chassi; // Não funciona pra filhos ou usuário final
+
+          function __construct(string $modelo = null, string $cor = null, string $chassi = "ABCBLABLABLA123") {
+            // Aciona uma ação no início do processo de instanciamento.
+            $this->modelo = $modelo;
+            $this->cor = $cor;
+            $this->chassi = $chassi;
+            echo "Objeto criado com sucesso";
+          }
+
+          function __destruct() {
+            // Aciona uma ação ao final do processo de instanciamento.
+            // Acionado se o objeto for eliminado
+            echo "Final do instanciamento";
+          }
+
+          public function set_modelo($modelo) { // public já é o padrão
+            $this->modelo = $modelo;
+          }
+      
+          function get_modelo() {
+            return $this->modelo;
+          }
+
+          function transforma_chassi() {
+            $this->chassi = "NOVO_VALOR";
+          }
+        }
+        $novoCarro = new carrinho("Uno", "Bordô");
+        var_dump($novoCarro);
+        $novoVazio = new carrinho();
+        var_dump($novoVazio);
+
+        // Novo método de declarar apenas 8 pra cima
+        class carroNovaForma {
+          function __construct (public string $modelo = "Indefinido", public string $cor = "Nenhuma") {
+          }
+        }
+        ?>
+      </p>
+      </section>
+    </article>
+
+    <article>
+      <h2>Herança e visibilidade</h2>
+      <pre>
+        <code class="language-php">
+        class Pai {
+          function __construct(
+            public string $nome = "",
+            public int $idade = 0,
+          ) {}
+          public function qualNome() {
+            echo "O nome dessa pessoa é: " . $this->nome;
+            echo "&lt;br&gt;&lt;br&gt;";
+          }
+
+          protected function qualIdade() {
+            echo "A idade dessa pessoa é: " . $this->idade;
+            echo "&lt;br&gt;&lt;br&gt;";
+          }
+  
+          private function todasInformacoes() {
+            echo "O nome é: " . $this->nome . "e a idade é: " . $this->idade;
+            echo "&lt;br&gt;&lt;br&gt;";
+          }
+        }
+
+        class Filho extends Pai {
+          function __construct(public string $olhos = "") {
+            parent::__construct();
+          }
+          function mostraDados() {
+            $this->qualIdade();
+            // A classe filho pode invocar métodos protegidos do pai.
+          }
+          function teste() {
+            // $pai->todasInformacoes(); Não funciona aqui
+          }
+        }
+
+        class Neto extends Filho {
+
+        }
+
+        $pai = new Pai();
+        var_dump($pai);
+        echo "&lt;br&gt;&lt;br&gt;";
+        $filho = new Filho("Vermelhos", 20, "João");
+        var_dump($filho);
+        echo "&lt;br&gt;&lt;br&gt;";
+        $filho->mostraDados();
+        // A classe filho executa métodos protegidos fora de sua declaração.
+
+        // $pai->todasInformacoes(); Não funciona aqui
+        echo "&lt;br&gt;&lt;br&gt;";
+        $neto = new Neto();
+        var_dump($neto);
+        </code>
+      </pre>
+      <p class="code-result">
+        <?php
+          class Pai {
+            function __construct(
+              public string $nome = "",
+              public int $idade = 0,
+            ) {}
+            public function qualNome() {
+              echo "O nome dessa pessoa é: " . $this->nome;
+              echo "<br><br>";
+            }
+            protected function qualIdade() {
+              echo "A idade dessa pessoa é: " . $this->idade;
+              echo "<br><br>";
+            }
+            private function todasInformacoes() {
+              echo "O nome é: " . $this->nome . "e a idade é: " . $this->idade;
+              echo "<br><br>";
+            }
+          }
+          class Filho extends Pai {
+            function __construct(public string $olhos = "") {
+              parent::__construct();
+            }
+            function mostraDados() {
+              $this->qualIdade();
+              // A classe filho pode invocar métodos protegidos do pai.
+            }
+            function teste() {
+              // $pai->todasInformacoes(); Não funciona aqui
+            }
+          }
+          class Neto extends Filho {
+          }
+          $pai = new Pai();
+          var_dump($pai);
+          echo "<br><br>";
+          $filho = new Filho("Vermelhos", 20, "João");
+          var_dump($filho);
+          echo "<br><br>";
+          $filho->mostraDados();
+          // A classe filho executa métodos protegidos fora de sua declaração.
+          // $pai->todasInformacoes(); Não funciona aqui
+          echo "<br><br>";
+          $neto = new Neto();
+          var_dump($neto);
+        ?>
+      </p>
+    </article>
+    <article>
+      <h2>Constantes e autoloading</h2>
+      <section>
+        <h3>Constantes</h3>
+        <pre>
+          <code class="language-php">
+            class Exemplo {
+              const nomeConstante = "constante";
+            
+              function teste() {
+                echo self::nomeConstante;
+              }
+            }
+
+            echo "&lt;br&gt;Chamar sem instanciar: ";
+            echo Exemplo::nomeConstante;
+
+            $exemplo = new Exemplo();
+
+            echo "&lt;br&gt;Instanciando: ";
+            echo $exemplo->teste();
+          </code>
+        </pre>
+        <p>
+          <?php
+            class Exemplo {
+              const nomeConstante = "constante";
+            
+              function teste() {
+                echo self::nomeConstante;
+              }
+            }
+
+            echo "<br>Chamar sem instanciar: ";
+            echo Exemplo::nomeConstante;
+
+            $exemplo = new Exemplo();
+
+            echo "<br>Instanciando: ";
+            echo $exemplo->teste();
+          ?>
+        </p>
+      </section>
+      <section>
+        <h3>Autoloading</h3>
+        <p>Considerando várias classes na pasta exautoload</p>
+        <pre>
+          <code class="language-php">
+            function loadClass($nomeClass) {
+              $dir = __DIR__ . '/exautoload/' . $nomeClass . '.php';
+              if (is_file($dir)) {
+                require($dir);
+              }
+            }
+
+            spl_autoload_register('loadClass');
+
+            // Basta importar o arquivo php que contém a loadClass e 
+            // e no arquivo importado separado fazer:
+            $mil = new Classesmil();
+            $mil->teste();
+          </code>
+        </pre>
+        <p class="code-result">
+          <?php
+            function loadClass($nomeClass) {
+              $dir = __DIR__ . '/exautoload/' . $nomeClass . '.php';
+              if (is_file($dir)) {
+                require($dir);
+              }
+            }
+
+            spl_autoload_register('loadClass');
+
+            // Basta importar o arquivo php que contém a loadClass e 
+            // e no arquivo importado separado fazer:
+            $mil = new Classesmil();
+            $mil->teste();
+          ?>
+        </p>
+      </section>
+    </article>
+      <h2>Classes e métodos abstratos</h2>
+      <p>Classes não instanciáveis que servem apenas de molde para outras</p>
+      <p>Métodos de classes abstratas devem ser públicos ou protegidos, nunca privados</p>
+      <p>
+        Classes abstratas podem ser carregadas no autoload mesmo não tendo mesmo qualNome
+        Ou mesmo junto a outra classe abstrata, parece que o autoload pega a primeira classe concreta
+        com o nome do arquivo.
+      </p>
+      <pre>
+        <code class="language-php">
+          abstract class Car {
+            abstract protected function teste($nome);
+          }
+
+          class Audi extends Car {
+            function teste($nome, string $placa = "Nenhuma placa cadastrada") {
+              echo "$nome, $placa";
+            }
+          }
+
+          $audi = new Audi();
+          $audi->teste("Audi");
+        </code>
+      </pre>
+      <p class="code-result">
+        <?php
+          abstract class Car {
+            abstract protected function teste($nome);
+          }
+
+          class Audi extends Car {
+            function teste($nome, string $placa = "Nenhuma placa cadastrada") {
+              echo "$nome, $placa";
+            }
+          }
+
+          $audi = new Audi();
+          $audi->teste("Audi");
+        ?>
+      </p>
+    </article>
+
+    <article>
+      <h2>Interface & Traits</h2>
+      <section>
+        <h3>Interfaces</h3>
+        <p>Interfaces podem ser usadas por outras classes</p>
+        <p>Ex: Se cada fabricante de tomada fizesse um modelo, e não tivesse um padrão
+          ia ser uma confusão de adaptadores e tomadas. Pra isso existe um modelo padrão
+          de interface entre duas entradas que se comunicam. Daí surge a lógica das interfaces.
+          O que tem em um e deve ter no outro para que se encaixem?
+        </p>
+        <p>Interfaces não podem ter propriedades</p>
+        <p>Métodos de uma interface devem ser públicos</p>
+        <pre>
+          <code class="language-php">
+            interface MetodosFrutas {
+              function criar($nome, $cor);
+              function completo();
+            }
+
+            class Fruta implements MetodosFrutas {
+              function teste() {
+                echo "Essa é a classe fruta! &lt;br&gt;";
+              }
+
+              // Métodos de interface
+              function criar($nome, $cor) {
+                $this->nome = $nome;
+                $this->cor = $cor;
+              }
+
+              function completo() {
+                echo "A fruta é $this->nome e a cor é $this->cor&lt;br&gt;";
+              }
+            }
+
+            $bananaFruta = new Fruta();
+            $bananaFruta->criar("Banana", "Amarelo");
+            $bananaFruta->completo();
+          </code>
+        </pre>
+        <p>
+          <?php
+            interface MetodosFrutas {
+              function criar($nome, $cor);
+              function completo();
+            }
+
+            class Fruta implements MetodosFrutas {
+              function teste() {
+                echo "Essa é a classe fruta! <br>";
+              }
+
+              // Métodos de interface
+              function criar($nome, $cor) {
+                $this->nome = $nome;
+                $this->cor = $cor;
+              }
+
+              function completo() {
+                echo "A fruta é $this->nome e a cor é $this->cor<br>";
+              }
+            }
+
+            $bananaFruta = new Fruta();
+            $bananaFruta->criar("Banana", "Amarelo");
+            $bananaFruta->completo();
+          ?>
+        </p>
+      </section>
+      
+      <section>
+        <h3>Traits</h3>
+        <pre>
+          <code class="language-php">
+            trait Comer {
+              function comer() {
+                echo "Humm que fome!!!&lt;br&gt;";
+              }
+            }
+
+            class Pessoa {
+              function teste() {
+                echo "Essa é a classe pessoa!&lt;br&gt;";
+              }
+              use Comer;
+            }
+
+            class Animal {
+              use Comer;
+            }
+
+            $umaPessoa = new Pessoa();
+            $umaPessoa->comer();
+            $umAnimal = new Animal();
+            $umAnimal = new Animal();
+            $umAnimal->comer();
+          </code>
+        </pre>
+        <p class="code-result">
+          <?php
+            trait Comer {
+              function comer() {
+                echo "Humm que fome!!!<br>";
+              }
+            }
+
+            class Pessoa {
+              function teste() {
+                echo "Essa é a classe pessoa!<br>";
+              }
+              use Comer;
+            }
+
+            class Animal {
+              use Comer;
+            }
+
+            $umaPessoa = new Pessoa();
+            $umaPessoa->comer();
+            $umAnimal = new Animal();
+            $umAnimal = new Animal();
+            $umAnimal->comer();
+          ?>
+        </p>
+      </section>
+    </article>
+
+    <article>
+      <h2>Diferença entre classes, Interfaces, Traits</h2>
+      <p>Classes fornecem um modelo pra classes filho ter determinadas funções e/ou propriedades públicos ou protegidos</p>
+      <p>Interfaces fornecem uma "fôrma", a uma ou várias classes e sempre tem métodos públicos (usa implements)</p>
+      <p>Traits são trechos de código usados em diversas classes, mesmo que essas não tenham relação, sem a necessidade de extender classes que não fazem sentido estarem juntas</p>
+    </article>
+
+    <article>
+      <h2>Métodos e propriedades estáticas</h2>
+      <p>São métodos e propriedades que podem ser acessadas sem serem instanciadas.</p>
+      <p>Funciona apenas com métodos e propriedades públicas.</p>
+      <pre>
+        <code class="language-php">
+          class Teste {
+            static $indice = 0;
+            public $id;
+
+            function novo() {
+              $this->id = self::$indice; // Coloca o índice atual na nova instância
+              self::$indice++; // Soma 1 ao índice
+            }
+
+            public static function ola() {
+              echo "Olá mundo estático!&lt;br&gt;";
+            }
+            function teste() {
+              self::ola(); // $this se refere a classe instanciada, self se refere a classe.
+            }
+          }
+
+          class TesteFilho extends Teste{
+            function __construct() {
+              parent::ola();
+            }
+
+            function pega() {
+              echo "&lt;br&gt;" . parent::$indice . "&lt;br&gt;";
+            }
+          }
+
+          class Aleatoria {
+            function qualquer() {
+              Teste::ola();
+            }
+          }
+
+          Teste::ola();
+          $teste = new Teste();
+          $teste->teste();
+
+          $testeFilho = new TesteFilho();
+
+          $aleatoria = new Aleatoria();
+          $aleatoria->qualquer();
+
+          echo "Teste ids: &lt;br&gt;";
+          echo "A estática atual:&lt;br&gt;";
+          echo Teste::$indice;
+          echo "&lt;br&gt;Ids adicionados:&lt;br&gt;";
+          $teste1 = new Teste();
+          $teste1->novo();
+          echo $teste1->id;
+          echo "&lt;br&gt;";
+          $teste2 = new Teste();
+          $teste2->novo();
+          echo $teste2->id;
+          echo "&lt;br&gt;";
+          $teste3 = new Teste();
+          $teste3->novo();
+          echo $teste3->id;
+          echo "&lt;br&gt;";
+          echo "A estática atual:&lt;br&gt;";
+          echo Teste::$indice;
+          echo "&lt;br&gt;";
+        </code>
+      </pre>
+      <p class="code-result">
+        <?php
+          class Teste {
+            static $indice = 0;
+            public $id;
+
+            function novo() {
+              $this->id = self::$indice; // Coloca o índice atual na nova instância
+              self::$indice++; // Soma 1 ao índice
+            }
+
+            public static function ola() {
+              echo "Olá mundo estático!<br>";
+            }
+            function teste() {
+              self::ola(); // $this se refere a classe instanciada, self se refere a classe.
+            }
+          }
+
+          class TesteFilho extends Teste{
+            function __construct() {
+              parent::ola();
+            }
+
+            function pega() {
+              echo "<br>" . parent::$indice . "<br>";
+            }
+          }
+
+          class Aleatoria {
+            function qualquer() {
+              Teste::ola();
+            }
+          }
+
+          Teste::ola();
+          $teste = new Teste();
+          $teste->teste();
+
+          $testeFilho = new TesteFilho();
+
+          $aleatoria = new Aleatoria();
+          $aleatoria->qualquer();
+
+          echo "Teste ids: <br>";
+          echo "A estática atual:<br>";
+          echo Teste::$indice;
+          echo "<br>Ids adicionados:<br>";
+          $teste1 = new Teste();
+          $teste1->novo();
+          echo $teste1->id;
+          echo "<br>";
+          $teste2 = new Teste();
+          $teste2->novo();
+          echo $teste2->id;
+          echo "<br>";
+          $teste3 = new Teste();
+          $teste3->novo();
+          echo $teste3->id;
+          echo "<br>";
+          echo "A estática atual:<br>";
+          echo Teste::$indice;
+          echo "<br>";
+        ?>
+      </p>
+
+    </article>
   </main>
   <script src="../src/util/prism/scriptprism.js"></script>
 </body>
